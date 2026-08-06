@@ -5,958 +5,200 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Viajero Premium — Pagás precio de turista. Viajás como VIP.</title>
 <meta name="description" content="El manual que las aerolíneas no quieren que conozcas. Salas VIP, Business Class sin pagarlo, hasta $1.200 USD de compensación. 8 módulos. 20 hacks.">
-<meta property="og:title" content="El Viajero Premium">
+<meta property="og:title" content="El Viajero Premium — @viajealinfinit8">
 <meta property="og:description" content="Pagás precio de turista. Viajás como VIP.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200">
+<meta property="og:image" content="./portada2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ── RESET & BASE ─────────────────────────────────── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --negro:     #080808;
-  --negro2:    #111111;
-  --negro3:    #1A1A1A;
-  --negro4:    #222222;
-  --dorado:    #C9A84C;
-  --dorado2:   #E8C96A;
-  --dorado3:   #A07830;
-  --blanco:    #FFFFFF;
-  --blanco2:   #E8E3D8;
-  --gris:      #888888;
-  --gris2:     #444444;
-  --verde:     #4A7C59;
-  --rojo:      #8B3A3A;
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --negro:#080808;--negro2:#111111;--negro3:#1A1A1A;--negro4:#222222;
+  --dorado:#C9A84C;--dorado2:#E8C96A;
+  --blanco:#FFFFFF;--blanco2:#E8E3D8;
+  --gris:#888888;--gris2:#333333;
 }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--negro);
-  color: var(--blanco2);
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--blanco2);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
-/* ── TIPOGRAFÍA ───────────────────────────────────── */
-.display { font-family: 'Playfair Display', serif; }
-.gold { color: var(--dorado); }
-.white { color: var(--blanco); }
-.small { font-size: 13px; color: var(--gris); }
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.header-logo{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;white-space:nowrap}
+.header-btn{background:var(--dorado);color:var(--negro);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;white-space:nowrap;transition:background .2s}
+.header-btn:hover{background:var(--dorado2)}
 
-/* ── BOTÓN PRINCIPAL ──────────────────────────────── */
-.btn-gold {
-  display: inline-block;
-  background: var(--dorado);
-  color: var(--negro);
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 16px 36px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  text-align: center;
-  width: 100%;
-}
-.btn-gold:hover { background: var(--dorado2); transform: translateY(-1px); }
-.btn-gold.outline {
-  background: transparent;
-  border: 1.5px solid var(--dorado);
-  color: var(--dorado);
-}
-.btn-gold.outline:hover { background: var(--dorado); color: var(--negro); }
+/* HERO */
+#hero{padding-top:80px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;z-index:0}
+.hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.22}
+.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,var(--negro) 0%,rgba(8,8,8,0.3) 40%,rgba(8,8,8,0.3) 60%,var(--negro) 100%)}
+.hero-inner{position:relative;z-index:1;padding:60px 24px 80px;max-width:820px;margin:0 auto;text-align:center}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--dorado);margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:40px;height:.5px;background:var(--dorado);opacity:.5}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,78px);font-weight:900;line-height:1.05;color:var(--blanco);letter-spacing:-1px;margin-bottom:6px}
+.hero-h1 span{color:var(--dorado);display:block}
+.hero-sub{font-size:clamp(15px,2.5vw,18px);color:var(--blanco2);opacity:.8;max-width:540px;margin:20px auto 36px;line-height:1.65}
+.hero-cta-wrap{max-width:400px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero-btn{display:block;background:var(--dorado);color:var(--negro);font-weight:800;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:20px 32px;width:100%;text-align:center;transition:background .2s,transform .15s}
+.hero-btn:hover{background:var(--dorado2);transform:translateY(-2px)}
+.hero-price{font-size:13px;color:var(--gris)}
+.hero-price s{color:var(--gris)}
+.hero-price strong{color:var(--dorado);font-size:15px}
+.hero-badges{display:flex;justify-content:center;gap:24px;margin-top:52px;flex-wrap:wrap}
+.hero-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:8px}
+.hero-badge::before{content:'';display:block;width:4px;height:4px;background:var(--dorado);opacity:.6}
 
-/* ── LÍNEA DORADA ─────────────────────────────────── */
-.hr-gold {
-  border: none;
-  height: 0.5px;
-  background: rgba(201,168,76,0.25);
-  margin: 0;
-}
-.hr-gold.bright { background: var(--dorado); opacity: 0.6; }
+/* IMAGEN FULL — portada 3 */
+#img-full{padding:0;overflow:hidden;max-height:520px}
+#img-full img{width:100%;height:520px;object-fit:cover;object-position:center top;opacity:.9}
 
-/* ── SECCIÓN BASE ─────────────────────────────────── */
-section { padding: 80px 24px; }
-.container { max-width: 900px; margin: 0 auto; }
-.container-wide { max-width: 1100px; margin: 0 auto; }
+/* HISTORIA */
+#historia{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:80px 24px}
+.historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:900px;margin:0 auto}
+.historia-img{border:1px solid rgba(201,168,76,.2);overflow:hidden;position:relative}
+.historia-img img{width:100%;height:400px;object-fit:cover;object-position:center}
+.historia-img-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,8,8,.95),transparent);padding:24px 20px 14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dorado)}
+.historia-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:20px}
+.historia-content h2{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:18px}
+.historia-content p{font-size:15px;color:var(--blanco2);line-height:1.8;margin-bottom:14px;opacity:.85}
+.cita{border-left:3px solid var(--dorado);padding:16px 20px;background:rgba(201,168,76,.05);margin:22px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:var(--blanco);line-height:1.6}
 
-/* ── BADGE ────────────────────────────────────────── */
-.badge {
-  display: inline-block;
-  border: 1px solid rgba(201,168,76,0.4);
-  color: var(--dorado);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  margin-bottom: 24px;
-}
+/* HR */
+hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 
-/* ══════════════════════════════════════════════════
-   1. HEADER STICKY
-══════════════════════════════════════════════════ */
-#header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(8,8,8,0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,168,76,0.15);
-  padding: 14px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.header-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--dorado);
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.header-btn {
-  background: var(--dorado);
-  color: var(--negro);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.header-btn:hover { background: var(--dorado2); }
+/* DOLORES */
+#dolores{padding:80px 24px;background:var(--negro)}
+.section-header{text-align:center;margin-bottom:48px}
+.section-header .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,40px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:10px}
+.section-header p{font-size:15px;color:var(--gris);max-width:500px;margin:0 auto}
+.dolores-list{max-width:700px;margin:0 auto}
+.dolor-item{display:flex;align-items:flex-start;gap:18px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.05);opacity:0;transform:translateX(-20px);transition:opacity .5s,transform .5s}
+.dolor-item.visible{opacity:1;transform:translateX(0)}
+.dolor-x{width:30px;height:30px;border:1px solid rgba(180,60,60,.4);background:rgba(180,60,60,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#cc6666;font-size:13px;margin-top:3px}
+.dolor-txt{font-size:15px;color:var(--blanco2);line-height:1.65}
+.dolor-txt strong{color:var(--blanco)}
+.dolores-cierre{text-align:center;margin-top:36px;font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--dorado)}
 
-/* ══════════════════════════════════════════════════
-   2. HERO
-══════════════════════════════════════════════════ */
-#hero {
-  padding-top: 120px;
-  padding-bottom: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=80');
-  background-size: cover;
-  background-position: center 40%;
-  opacity: 0.18;
-  z-index: 0;
-}
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, var(--negro) 0%, transparent 30%, transparent 70%, var(--negro) 100%);
-}
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  padding: 0 24px 80px;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.hero-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--dorado);
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-.hero-eyebrow::before,
-.hero-eyebrow::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 0.5px;
-  background: var(--dorado);
-  opacity: 0.5;
-}
-.hero-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(42px, 8vw, 80px);
-  font-weight: 900;
-  line-height: 1.05;
-  color: var(--blanco);
-  margin-bottom: 6px;
-  letter-spacing: -1px;
-}
-.hero-h1 span {
-  color: var(--dorado);
-  display: block;
-}
-.hero-sub {
-  font-size: clamp(15px, 2.5vw, 18px);
-  color: var(--blanco2);
-  opacity: 0.8;
-  max-width: 540px;
-  margin: 20px auto 36px;
-  line-height: 1.65;
-}
-.hero-cta-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  max-width: 420px;
-  margin: 0 auto;
-}
-.hero-cta-btn {
-  display: block;
-  background: var(--dorado);
-  color: var(--negro);
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 20px 32px;
-  width: 100%;
-  text-align: center;
-  transition: background 0.2s, transform 0.15s;
-}
-.hero-cta-btn:hover { background: var(--dorado2); transform: translateY(-2px); }
-.hero-price-note {
-  font-size: 13px;
-  color: var(--gris);
-}
-.hero-price-note s { color: var(--gris); }
-.hero-price-note strong { color: var(--dorado); font-size: 15px; }
-.hero-badges {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 52px;
-  flex-wrap: wrap;
-}
-.hero-badge {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gris);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.hero-badge::before {
-  content: '';
-  display: block;
-  width: 4px;
-  height: 4px;
-  background: var(--dorado);
-  opacity: 0.6;
-}
+/* BENEFICIOS */
+#beneficios{padding:80px 24px;background:var(--negro2);border-top:1px solid rgba(201,168,76,.1)}
+.beneficios-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:800px;margin:0 auto}
+.ben-card{background:var(--negro3);border:1px solid rgba(201,168,76,.1);padding:22px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,border-color .2s}
+.ben-card.visible{opacity:1;transform:translateY(0)}
+.ben-card:hover{border-color:rgba(201,168,76,.3)}
+.ben-check{width:26px;height:26px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--dorado);font-size:12px;margin-top:3px}
+.ben-txt{font-size:14px;color:var(--blanco2);line-height:1.6}
+.ben-txt strong{color:var(--dorado);font-size:15px}
 
-/* ══════════════════════════════════════════════════
-   3. HISTORIA (SUBGIRO)
-══════════════════════════════════════════════════ */
-#historia {
-  background: var(--negro2);
-  border-top: 1px solid rgba(201,168,76,0.1);
-  border-bottom: 1px solid rgba(201,168,76,0.1);
-}
-.historia-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.historia-img-wrap {
-  position: relative;
-  border: 1px solid rgba(201,168,76,0.2);
-  overflow: hidden;
-}
-.historia-img-wrap img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  opacity: 0.85;
-  transition: opacity 0.3s;
-}
-.historia-img-wrap:hover img { opacity: 1; }
-.historia-img-label {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(to top, rgba(8,8,8,0.95), transparent);
-  padding: 24px 20px 16px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--dorado);
-}
-.historia-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 700;
-  color: var(--blanco);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-.historia-content p {
-  font-size: 15px;
-  color: var(--blanco2);
-  line-height: 1.8;
-  margin-bottom: 16px;
-  opacity: 0.85;
-}
-.historia-cita {
-  border-left: 3px solid var(--dorado);
-  padding: 16px 20px;
-  background: rgba(201,168,76,0.05);
-  margin: 24px 0;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 17px;
-  color: var(--blanco);
-  line-height: 1.6;
-}
+/* PRODUCTO */
+#producto{padding:80px 24px;background:var(--negro)}
+.producto-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start;max-width:960px;margin:0 auto}
+.producto-img-wrap{position:sticky;top:100px}
+.producto-mockup{border:1px solid rgba(201,168,76,.2);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(201,168,76,.08)}
+.producto-mockup img{width:100%;display:block}
+.precio-box{margin-top:16px;padding:20px;background:var(--negro3);border:1px solid rgba(201,168,76,.2);text-align:center}
+.precio-tachado{font-size:13px;color:var(--gris);text-decoration:line-through;margin-bottom:4px}
+.precio-actual{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:var(--dorado);line-height:1}
+.precio-nota{font-size:11px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.btn-gold{display:block;background:var(--dorado);color:var(--negro);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:17px 28px;text-align:center;transition:background .2s,transform .15s;margin-top:12px;width:100%}
+.btn-gold:hover{background:var(--dorado2);transform:translateY(-1px)}
+.producto-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
+.producto-content h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:6px}
+.producto-content .sub{font-size:14px;color:var(--gris);margin-bottom:24px}
+.modulos{display:flex;flex-direction:column}
+.mod-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.mod-num{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--dorado);opacity:.35;min-width:26px;line-height:1.3}
+.mod-titulo{font-size:13px;font-weight:600;color:var(--blanco);margin-bottom:2px}
+.mod-desc{font-size:12px;color:var(--gris);line-height:1.5}
 
-/* ══════════════════════════════════════════════════
-   4. DOLORES
-══════════════════════════════════════════════════ */
-#dolores { background: var(--negro); }
-.dolores-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.dolores-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 700;
-  color: var(--blanco);
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-.dolores-header p {
-  font-size: 15px;
-  color: var(--gris);
-  max-width: 500px;
-  margin: 0 auto;
-}
-.dolores-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.dolor-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.dolor-item.visible { opacity: 1; transform: translateX(0); }
-.dolor-icon {
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(139,58,58,0.5);
-  background: rgba(139,58,58,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 14px;
-  color: #cc6666;
-  margin-top: 2px;
-}
-.dolor-text {
-  font-size: 15px;
-  color: var(--blanco2);
-  line-height: 1.65;
-}
-.dolor-text strong { color: var(--blanco); }
-.dolores-cierre {
-  text-align: center;
-  margin-top: 40px;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: var(--dorado);
-}
+/* BONUS */
+#bonus{padding:80px 24px;background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
+.bonus-card{max-width:700px;margin:0 auto;border:1px solid rgba(201,168,76,.3);background:linear-gradient(135deg,rgba(201,168,76,.05) 0%,transparent 60%);padding:40px;display:flex;gap:28px;align-items:center}
+.bonus-icon{font-size:44px;flex-shrink:0}
+.bonus-badge{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px}
+.bonus-titulo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--blanco);margin-bottom:10px;line-height:1.3}
+.bonus-desc{font-size:14px;color:var(--blanco2);line-height:1.65;opacity:.85;margin-bottom:10px}
+.bonus-valor{font-size:13px;color:var(--gris)}
+.bonus-valor strong{color:var(--dorado)}
 
-/* ══════════════════════════════════════════════════
-   5. BENEFICIOS
-══════════════════════════════════════════════════ */
-#beneficios {
-  background: var(--negro2);
-  border-top: 1px solid rgba(201,168,76,0.1);
-}
-.beneficios-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.beneficios-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 700;
-  color: var(--blanco);
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-.beneficios-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.beneficio-card {
-  background: var(--negro3);
-  border: 1px solid rgba(201,168,76,0.12);
-  padding: 24px;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s, transform 0.5s, border-color 0.2s;
-}
-.beneficio-card.visible { opacity: 1; transform: translateY(0); }
-.beneficio-card:hover { border-color: rgba(201,168,76,0.35); }
-.beneficio-check {
-  width: 28px;
-  height: 28px;
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--dorado);
-  font-size: 13px;
-  margin-top: 2px;
-}
-.beneficio-texto {
-  font-size: 14px;
-  color: var(--blanco2);
-  line-height: 1.6;
-}
-.beneficio-texto strong { color: var(--dorado); font-size: 16px; }
+/* TESTIMONIOS */
+#testimonios{padding:80px 24px;background:var(--negro)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
+.test-card{background:var(--negro3);border:1px solid rgba(201,168,76,.1);padding:26px 22px;opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.test-card.visible{opacity:1;transform:translateY(0)}
+.estrellas{color:var(--dorado);font-size:13px;letter-spacing:2px;margin-bottom:14px}
+.test-txt{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--blanco2);line-height:1.7;margin-bottom:18px}
+.test-autor{display:flex;align-items:center;gap:10px}
+.autor-av{width:38px;height:38px;border-radius:50%;background:var(--negro4);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--dorado);font-weight:700;flex-shrink:0}
+.autor-nombre{font-size:13px;font-weight:600;color:var(--blanco)}
+.autor-ciudad{font-size:11px;color:var(--gris)}
 
-/* ══════════════════════════════════════════════════
-   6. PRODUCTO
-══════════════════════════════════════════════════ */
-#producto { background: var(--negro); }
-.producto-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 60px;
-  align-items: start;
-}
-.producto-img-wrap {
-  position: sticky;
-  top: 100px;
-}
-.producto-mockup {
-  border: 1px solid rgba(201,168,76,0.2);
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.08);
-}
-.producto-mockup img {
-  width: 100%;
-  display: block;
-}
-.producto-precio-wrap {
-  margin-top: 20px;
-  text-align: center;
-  padding: 20px;
-  background: var(--negro3);
-  border: 1px solid rgba(201,168,76,0.2);
-}
-.precio-tachado {
-  font-size: 14px;
-  color: var(--gris);
-  text-decoration: line-through;
-  margin-bottom: 4px;
-}
-.precio-actual {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  font-weight: 900;
-  color: var(--dorado);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.precio-nota {
-  font-size: 12px;
-  color: var(--gris);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.producto-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 38px);
-  font-weight: 700;
-  color: var(--blanco);
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-.producto-content .sub {
-  font-size: 15px;
-  color: var(--gris);
-  margin-bottom: 28px;
-}
-.modulos-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin-bottom: 32px;
-}
-.modulo-item {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.modulo-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--dorado);
-  opacity: 0.35;
-  min-width: 28px;
-  line-height: 1.3;
-}
-.modulo-info {}
-.modulo-titulo {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--blanco);
-  margin-bottom: 2px;
-}
-.modulo-desc {
-  font-size: 13px;
-  color: var(--gris);
-  line-height: 1.55;
-}
+/* FAQ */
+#faq{padding:80px 24px;background:var(--negro2);border-top:1px solid rgba(201,168,76,.1)}
+.faq-list{max-width:680px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:14px;user-select:none}
+.faq-q-txt{font-size:15px;font-weight:500;color:var(--blanco);line-height:1.4}
+.faq-icon{width:26px;height:26px;border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;color:var(--dorado);font-size:18px;flex-shrink:0;transition:transform .3s;line-height:1}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 0 20px;font-size:14px;color:var(--blanco2);line-height:1.75;opacity:.85}
 
-/* ══════════════════════════════════════════════════
-   7. BONUS
-══════════════════════════════════════════════════ */
-#bonus {
-  background: var(--negro2);
-  border-top: 1px solid rgba(201,168,76,0.1);
-  border-bottom: 1px solid rgba(201,168,76,0.1);
-}
-.bonus-card {
-  max-width: 700px;
-  margin: 0 auto;
-  border: 1px solid rgba(201,168,76,0.3);
-  background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
-  padding: 40px;
-  display: flex;
-  gap: 32px;
-  align-items: center;
-}
-.bonus-icon {
-  font-size: 48px;
-  flex-shrink: 0;
-}
-.bonus-badge {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--dorado);
-  margin-bottom: 10px;
-}
-.bonus-titulo {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--blanco);
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-.bonus-desc {
-  font-size: 14px;
-  color: var(--blanco2);
-  line-height: 1.65;
-  opacity: 0.8;
-  margin-bottom: 12px;
-}
-.bonus-valor {
-  font-size: 13px;
-  color: var(--gris);
-}
-.bonus-valor strong { color: var(--dorado); }
+/* CTA FINAL */
+#cta-final{padding:100px 24px;background:var(--negro);text-align:center;position:relative;overflow:hidden}
+#cta-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;z-index:1;max-width:580px;margin:0 auto}
+.cta-inner h2{font-family:'Playfair Display',serif;font-size:clamp(36px,7vw,62px);font-weight:900;color:var(--blanco);line-height:1.05;letter-spacing:-1px;margin-bottom:6px}
+.cta-inner h2 span{color:var(--dorado);display:block}
+.cta-hr{width:60px;height:.5px;background:var(--dorado);margin:22px auto;opacity:.6}
+.cta-sub{font-size:16px;color:var(--blanco2);opacity:.75;max-width:440px;margin:0 auto 28px;line-height:1.65}
+.cta-precio{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;color:var(--dorado);line-height:1;margin-bottom:6px}
+.cta-precio-nota{font-size:12px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.cta-btn{display:block;background:var(--dorado);color:var(--negro);font-weight:800;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:22px 32px;max-width:420px;margin:0 auto;text-align:center;transition:background .2s,transform .15s}
+.cta-btn:hover{background:var(--dorado2);transform:translateY(-2px)}
+.cta-garantia{margin-top:18px;font-size:13px;color:var(--gris);display:flex;align-items:center;justify-content:center;gap:8px}
 
-/* ══════════════════════════════════════════════════
-   8. TESTIMONIOS
-══════════════════════════════════════════════════ */
-#testimonios { background: var(--negro); }
-.testimonios-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.testimonios-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 4vw, 38px);
-  font-weight: 700;
-  color: var(--blanco);
-  margin-bottom: 8px;
-}
-.testimonios-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.testimonio-card {
-  background: var(--negro3);
-  border: 1px solid rgba(201,168,76,0.12);
-  padding: 28px 24px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-}
-.testimonio-card.visible { opacity: 1; transform: translateY(0); }
-.estrellas {
-  color: var(--dorado);
-  font-size: 14px;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-}
-.testimonio-texto {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 14px;
-  color: var(--blanco2);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-.testimonio-autor {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.autor-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--negro4);
-  border: 1px solid rgba(201,168,76,0.2);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: var(--dorado);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-/* ✏️ EDITAR: reemplazar con foto real del testimoniante */
-.autor-nombre {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--blanco);
-}
-.autor-ciudad {
-  font-size: 12px;
-  color: var(--gris);
-}
+/* FOOTER */
+footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding:30px 24px;text-align:center}
+.footer-logo{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;margin-bottom:8px}
+.footer-copy{font-size:12px;color:var(--gris);line-height:1.6}
 
-/* ══════════════════════════════════════════════════
-   9. FAQ
-══════════════════════════════════════════════════ */
-#faq {
-  background: var(--negro2);
-  border-top: 1px solid rgba(201,168,76,0.1);
-}
-.faq-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-.faq-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 4vw, 36px);
-  font-weight: 700;
-  color: var(--blanco);
-}
-.faq-list {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.faq-pregunta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 0;
-  cursor: pointer;
-  gap: 16px;
-  user-select: none;
-}
-.faq-pregunta-texto {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--blanco);
-  line-height: 1.4;
-}
-.faq-icon {
-  width: 28px;
-  height: 28px;
-  border: 1px solid rgba(201,168,76,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dorado);
-  font-size: 18px;
-  flex-shrink: 0;
-  transition: transform 0.3s;
-  line-height: 1;
-}
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-respuesta {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-}
-.faq-respuesta-inner {
-  padding: 0 0 24px;
-  font-size: 14px;
-  color: var(--blanco2);
-  line-height: 1.75;
-  opacity: 0.85;
-}
+/* STICKY MOBILE */
+#sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(8,8,8,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(201,168,76,.2);padding:12px 20px}
+.sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:500px;margin:0 auto}
+.sticky-precio{display:flex;flex-direction:column}
+.sticky-tachado{font-size:11px;color:var(--gris);text-decoration:line-through}
+.sticky-actual{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--dorado);line-height:1}
+.sticky-btn{flex:1;background:var(--dorado);color:var(--negro);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:14px 16px;text-align:center;transition:background .2s}
+.sticky-btn:hover{background:var(--dorado2)}
 
-/* ══════════════════════════════════════════════════
-   10. CTA FINAL
-══════════════════════════════════════════════════ */
-#cta-final {
-  background: var(--negro);
-  text-align: center;
-  padding: 100px 24px;
-  position: relative;
-  overflow: hidden;
+/* RESPONSIVE */
+@media(max-width:768px){
+  section{padding:60px 20px}
+  #historia{padding:60px 20px}
+  .historia-grid{grid-template-columns:1fr;gap:32px}
+  .historia-img{display:none}
+  .beneficios-grid{grid-template-columns:1fr}
+  .producto-grid{grid-template-columns:1fr}
+  .producto-img-wrap{position:static}
+  .test-grid{grid-template-columns:1fr}
+  .bonus-card{flex-direction:column;gap:18px;padding:28px 22px}
+  #sticky{display:block}
+  body{padding-bottom:76px}
+  .header-btn{display:none}
+  #img-full img{height:300px}
 }
-#cta-final::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.cta-final-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.cta-final-inner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 7vw, 60px);
-  font-weight: 900;
-  color: var(--blanco);
-  line-height: 1.05;
-  margin-bottom: 6px;
-  letter-spacing: -1px;
-}
-.cta-final-inner h2 span {
-  color: var(--dorado);
-  display: block;
-}
-.cta-hr {
-  width: 60px;
-  height: 1px;
-  background: var(--dorado);
-  margin: 24px auto;
-  opacity: 0.6;
-}
-.cta-final-sub {
-  font-size: 16px;
-  color: var(--blanco2);
-  opacity: 0.75;
-  max-width: 440px;
-  margin: 0 auto 32px;
-  line-height: 1.65;
-}
-.cta-final-precio {
-  font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  font-weight: 900;
-  color: var(--dorado);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.cta-final-precio-nota {
-  font-size: 13px;
-  color: var(--gris);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-}
-.cta-final-btn {
-  display: block;
-  background: var(--dorado);
-  color: var(--negro);
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 22px 32px;
-  max-width: 420px;
-  margin: 0 auto;
-  text-align: center;
-  transition: background 0.2s, transform 0.15s;
-}
-.cta-final-btn:hover { background: var(--dorado2); transform: translateY(-2px); }
-.cta-garantia {
-  margin-top: 20px;
-  font-size: 13px;
-  color: var(--gris);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.cta-garantia::before { content: '🔒'; font-size: 14px; }
-
-/* ══════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════ */
-footer {
-  background: var(--negro2);
-  border-top: 1px solid rgba(201,168,76,0.1);
-  padding: 32px 24px;
-  text-align: center;
-}
-.footer-logo {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--dorado);
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.footer-copy {
-  font-size: 12px;
-  color: var(--gris);
-  line-height: 1.6;
-}
-
-/* ══════════════════════════════════════════════════
-   STICKY MOBILE BTN
-══════════════════════════════════════════════════ */
-#sticky-mobile {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 99;
-  background: rgba(8,8,8,0.95);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(201,168,76,0.2);
-  padding: 14px 20px;
-}
-.sticky-mobile-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-.sticky-mobile-precio {
-  display: flex;
-  flex-direction: column;
-}
-.sticky-mobile-tachado {
-  font-size: 12px;
-  color: var(--gris);
-  text-decoration: line-through;
-}
-.sticky-mobile-actual {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--dorado);
-  line-height: 1;
-}
-.sticky-mobile-btn {
-  flex: 1;
-  background: var(--dorado);
-  color: var(--negro);
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 14px 20px;
-  text-align: center;
-  display: block;
-  transition: background 0.2s;
-}
-.sticky-mobile-btn:hover { background: var(--dorado2); }
-
-/* ══════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════ */
-@media (max-width: 768px) {
-  section { padding: 60px 20px; }
-  .historia-grid { grid-template-columns: 1fr; gap: 32px; }
-  .historia-img-wrap { display: none; }
-  .beneficios-grid { grid-template-columns: 1fr; }
-  .producto-grid { grid-template-columns: 1fr; }
-  .producto-img-wrap { position: static; display: none; }
-  .testimonios-grid { grid-template-columns: 1fr; }
-  .bonus-card { flex-direction: column; gap: 20px; padding: 28px 24px; }
-  #sticky-mobile { display: block; }
-  body { padding-bottom: 80px; }
-  .header-btn { display: none; }
-}
-@media (max-width: 480px) {
-  .hero-h1 { font-size: 38px; }
-}
-
-/* ── ANIMACIÓN DE ENTRADA ─────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  .dolor-item, .beneficio-card, .testimonio-card {
-    opacity: 1 !important;
-    transform: none !important;
-  }
+@media(prefers-reduced-motion:reduce){
+  .dolor-item,.ben-card,.test-card{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══════════════════════════════════════ -->
+<!-- HEADER -->
 <header id="header">
   <div class="header-logo">✈ viajealinfinit8</div>
   <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="header-btn">
@@ -964,12 +206,14 @@ footer {
   </a>
 </header>
 
-<!-- ══ HERO ════════════════════════════════════════ -->
+<!-- HERO — usa portada5 de fondo -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg-img">
+    <img src="./portada5.png" alt="El Viajero Premium">
+  </div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Manual Confidencial ✈</div>
-    <h1 class="hero-h1 display">
+    <h1 class="hero-h1">
       Pagás precio de turista.
       <span>Viajás como VIP.</span>
     </h1>
@@ -977,12 +221,10 @@ footer {
       Lo que las aerolíneas, los lounges y los aeropuertos nunca te van a contar — en un sistema de 8 módulos que cambia tu forma de viajar para siempre.
     </p>
     <div class="hero-cta-wrap">
-      <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-cta-btn">
+      <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
         Quiero El Viajero Premium ✈
       </a>
-      <p class="hero-price-note">
-        <s>$47 USD</s> &nbsp;→&nbsp; <strong>$27 USD</strong> &nbsp;·&nbsp; Precio de lanzamiento
-      </p>
+      <p class="hero-price"><s>$47 USD</s> &nbsp;→&nbsp; <strong>$27 USD</strong> &nbsp;·&nbsp; Precio de lanzamiento</p>
     </div>
     <div class="hero-badges">
       <div class="hero-badge">8 Módulos</div>
@@ -992,399 +234,250 @@ footer {
   </div>
 </section>
 
-<!-- ══ HISTORIA ═════════════════════════════════════ -->
+<!-- IMAGEN FULL — portada3 -->
+<div id="img-full">
+  <img src="./portada3.png" alt="El sistema existe. La mayoría no lo usa.">
+</div>
+
+<!-- HISTORIA -->
 <section id="historia">
-  <div class="container">
-    <div class="historia-grid">
-      <div class="historia-img-wrap">
-        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Sala VIP de aeropuerto">
-        <div class="historia-img-label">✈ Sala VIP — Río de Janeiro</div>
-      </div>
-      <div class="historia-content">
-        <div class="badge">La historia detrás del manual</div>
-        <h2 class="display">¿Cómo es posible volar en Business pagando Economy?</h2>
-        <p>Volví de Barcelona a Buenos Aires con escala en Brasil. Busqué el vuelo de vuelta durante varios días, siempre en modo incógnito, a distintos horarios. Un día apareció una tarifa que no había visto antes.</p>
-        <p><strong style="color:var(--blanco)">€150 en Premium Economy</strong> — cuando el precio "normal" era $300. Incluía despacho prioritario en mostrador exclusivo, sala VIP en el aeropuerto y priority boarding.</p>
-        <div class="historia-cita">
-          "No fue suerte. Fue método. Saber cuándo buscar, cómo buscar y qué mirar cuando aparece una tarifa así."
-        </div>
-        <p>Junté todo ese sistema en un manual. Ocho módulos, veinte hacks, información real que las aerolíneas prefieren que no conozcas.</p>
-      </div>
+  <div class="historia-grid">
+    <div class="historia-img">
+      <img src="./portada2.png" alt="El Viajero Premium">
+      <div class="historia-img-label">✈ La experiencia que lo cambió todo</div>
+    </div>
+    <div class="historia-content">
+      <div class="badge">La historia detrás del manual</div>
+      <h2>¿Cómo es posible volar en Business pagando Economy?</h2>
+      <p>Volví de Barcelona a Buenos Aires con escala en Brasil. Busqué el vuelo de vuelta durante varios días, siempre en modo incógnito, a distintos horarios. Un día apareció una tarifa que no había visto antes.</p>
+      <p><strong style="color:var(--blanco)">€150 en Premium Economy</strong> — cuando el precio normal era $300. Incluía despacho prioritario en mostrador exclusivo, sala VIP y priority boarding.</p>
+      <div class="cita">"No fue suerte. Fue método. Saber cuándo buscar, cómo buscar y qué mirar cuando aparece una tarifa así."</div>
+      <p>Junté todo ese sistema en un manual. Ocho módulos, veinte hacks, información real que las aerolíneas prefieren que no conozcas.</p>
     </div>
   </div>
 </section>
 
-<!-- ══ DOLORES ══════════════════════════════════════ -->
+<hr class="gold">
+
+<!-- DOLORES -->
 <section id="dolores">
-  <div class="container">
-    <div class="dolores-header">
-      <div class="badge">¿Te identificás?</div>
-      <h2 class="display">Estas situaciones le pasan a la mayoría. Y tienen solución.</h2>
-      <p>Si viviste alguna de estas, estás perdiendo comodidad y dinero en cada viaje.</p>
-    </div>
-    <div class="dolores-list">
-      <div class="dolor-item">
-        <div class="dolor-icon">✕</div>
-        <div class="dolor-texto">Llegás al aeropuerto y ves la puerta de la <strong>sala VIP</strong> — y seguís de largo porque creés que no podés entrar</div>
-      </div>
-      <div class="dolor-item">
-        <div class="dolor-icon">✕</div>
-        <div class="dolor-texto">Te sentás en Economy en un vuelo de 12 horas mientras otros pasan a <strong>Business Class</strong> y no entendés cómo llegaron ahí</div>
-      </div>
-      <div class="dolor-item">
-        <div class="dolor-icon">✕</div>
-        <div class="dolor-texto">Tu vuelo se retrasó 4 horas — y nunca supiste que tenías derecho a hasta <strong>$1.200 USD de compensación</strong></div>
-      </div>
-      <div class="dolor-item">
-        <div class="dolor-icon">✕</div>
-        <div class="dolor-texto">Acumulás puntos y millas hace años pero nunca los canjeás porque no sabés <strong>cómo ni cuándo</strong></div>
-      </div>
-      <div class="dolor-item">
-        <div class="dolor-icon">✕</div>
-        <div class="dolor-texto">Esperás 40 minutos en la cinta de equipaje mientras otros <strong>ya salieron del aeropuerto</strong></div>
-      </div>
-      <div class="dolor-item">
-        <div class="dolor-icon">✕</div>
-        <div class="dolor-texto">Pagás tu tarjeta de crédito todos los meses sin saber que <strong>ya incluye acceso a salas VIP</strong></div>
-      </div>
-    </div>
-    <p class="dolores-cierre">Si dijiste sí a alguna, este manual es para vos.</p>
+  <div class="section-header">
+    <div class="badge">¿Te identificás?</div>
+    <h2>Estas situaciones le pasan a la mayoría.<br>Y tienen solución.</h2>
+    <p>Si viviste alguna de estas, estás perdiendo comodidad y dinero en cada viaje.</p>
   </div>
+  <div class="dolores-list">
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Llegás al aeropuerto y ves la puerta de la <strong>sala VIP</strong> — y seguís de largo porque creés que no podés entrar</div></div>
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Te sentás en Economy en un vuelo de 12 horas mientras otros pasan a <strong>Business Class</strong> y no entendés cómo llegaron ahí</div></div>
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Tu vuelo se retrasó 4 horas — y nunca supiste que tenías derecho a hasta <strong>$1.200 USD de compensación</strong></div></div>
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Acumulás puntos y millas hace años pero nunca los canjeás porque no sabés <strong>cómo ni cuándo</strong></div></div>
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Esperás 40 minutos en la cinta de equipaje mientras otros <strong>ya salieron del aeropuerto</strong></div></div>
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Pagás tu tarjeta todos los meses sin saber que <strong>ya incluye acceso a salas VIP</strong></div></div>
+  </div>
+  <p class="dolores-cierre">Si dijiste sí a alguna, este manual es para vos.</p>
 </section>
 
-<!-- ══ BENEFICIOS ═══════════════════════════════════ -->
+<hr class="gold">
+
+<!-- BENEFICIOS -->
 <section id="beneficios">
-  <div class="container">
-    <div class="beneficios-header">
-      <div class="badge">Lo que vas a poder hacer</div>
-      <h2 class="display">Después de leer El Viajero Premium</h2>
-    </div>
-    <div class="beneficios-grid">
-      <div class="beneficio-card">
-        <div class="beneficio-check">✓</div>
-        <div class="beneficio-texto">Entrar a salas VIP en más de 1.600 aeropuertos — desde <strong>$23 USD</strong> sin tarjeta black</div>
-      </div>
-      <div class="beneficio-card">
-        <div class="beneficio-check">✓</div>
-        <div class="beneficio-texto">Volar en Business Class usando los <strong>4 métodos reales</strong> que casi nadie en Latam conoce</div>
-      </div>
-      <div class="beneficio-card">
-        <div class="beneficio-check">✓</div>
-        <div class="beneficio-texto">Reclamar hasta <strong>€600 por pasajero</strong> cuando tu vuelo europeo se retrasa</div>
-      </div>
-      <div class="beneficio-card">
-        <div class="beneficio-check">✓</div>
-        <div class="beneficio-texto">Saber exactamente qué decir y cuándo para conseguir un <strong>upgrade en el aeropuerto</strong></div>
-      </div>
-      <div class="beneficio-card">
-        <div class="beneficio-check">✓</div>
-        <div class="beneficio-texto">Acumular millas <strong>sin volar</strong> — con compras del día a día que ya hacés</div>
-      </div>
-      <div class="beneficio-card">
-        <div class="beneficio-check">✓</div>
-        <div class="beneficio-texto">Salir primero del aeropuerto y moverte como los que <strong>viajan 50 veces al año</strong></div>
-      </div>
-    </div>
+  <div class="section-header">
+    <div class="badge">Después de leer El Viajero Premium</div>
+    <h2>Vas a poder hacer todo esto</h2>
+  </div>
+  <div class="beneficios-grid">
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Entrar a salas VIP en más de 1.600 aeropuertos desde <strong>$23 USD</strong> sin tarjeta black</div></div>
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Volar en Business Class usando los <strong>4 métodos reales</strong> que casi nadie en Latam conoce</div></div>
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Reclamar hasta <strong>€600 por pasajero</strong> cuando tu vuelo europeo se retrasa</div></div>
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Saber qué decir y cuándo para conseguir un <strong>upgrade en el aeropuerto</strong></div></div>
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Acumular millas <strong>sin volar</strong> con compras del día a día que ya hacés</div></div>
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Salir primero del aeropuerto y moverte como los que <strong>viajan 50 veces al año</strong></div></div>
   </div>
 </section>
 
-<!-- ══ PRODUCTO ═════════════════════════════════════ -->
+<hr class="gold">
+
+<!-- PRODUCTO -->
 <section id="producto">
-  <div class="container-wide" style="padding: 0 24px;">
-    <div class="producto-grid">
-      <div class="producto-img-wrap">
-        <!-- ✏️ EDITAR: reemplazar con imagen real de la portada del ebook -->
-        <div class="producto-mockup">
-          <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=600&q=80" alt="El Viajero Premium — Manual">
-        </div>
-        <div class="producto-precio-wrap">
-          <div class="precio-tachado">Precio regular: $47 USD</div>
-          <div class="precio-actual">$27 USD</div>
-          <div class="precio-nota">Precio de lanzamiento</div>
-        </div>
-        <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold" style="margin-top:12px;">
-          Conseguir el Manual ✈
-        </a>
+  <div class="producto-grid">
+    <div class="producto-img-wrap">
+      <!-- ✏️ EDITAR: reemplazar con mockup real del ebook si tenés uno -->
+      <div class="producto-mockup">
+        <img src="./portada2.png" alt="El Viajero Premium — Manual">
       </div>
-      <div class="producto-content">
-        <div class="badge">El Manual Completo</div>
-        <h2 class="display">El Viajero Premium</h2>
-        <p class="sub">8 módulos · 20 hacks · 18 páginas de información real y verificada</p>
-        <div class="modulos-list">
-          <div class="modulo-item">
-            <div class="modulo-num">01</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">Salas VIP Sin Tarjeta Black</div>
-              <div class="modulo-desc">Regus + DragonPass (~$23), LoungeBuddy, pre-reserva y acceso gratis en retrasos</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">02</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">Business Class Sin Pagarlo</div>
-              <div class="modulo-desc">Subasta Plusgrade, código de tarifa Y/B, overbooking voluntario y el gate a 45 minutos</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">03</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">El Sistema de Millas</div>
-              <div class="modulo-desc">LATAM Pass 2025 sin vuelos mínimos, Avianca LifeMiles con 100% de bonificación</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">04</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">El Check-in Estratégico</div>
-              <div class="modulo-desc">SeatGuru, comida especial gratis, upgrade durante check-in online a precio reducido</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">05</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">Upgrades en el Aeropuerto</div>
-              <div class="modulo-desc">La lista de prioridades real, el momento exacto y las palabras exactas que funcionan</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">06</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">Derechos del Pasajero</div>
-              <div class="modulo-desc">EC 261/2004 — hasta €600 por pasajero. AirHelp y ClaimCompass sin costo inicial</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">07</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">El Equipaje VIP</div>
-              <div class="modulo-desc">Etiqueta FRÁGIL, Fast Track, FlightAware, TripIt, Hopper y Expert Flyer</div>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">08</div>
-            <div class="modulo-info">
-              <div class="modulo-titulo">La Mentalidad del Viajero Premium</div>
-              <div class="modulo-desc">Sistema de preparación en 3 momentos: 7 días antes, 48hs antes y en el aeropuerto</div>
-            </div>
-          </div>
-        </div>
-        <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">
-          Quiero el Manual — $27 USD ✈
-        </a>
-        <p style="font-size:13px;color:var(--gris);margin-top:12px;text-align:center;">
-          Acceso inmediato · PDF descargable · Pago seguro
-        </p>
+      <div class="precio-box">
+        <div class="precio-tachado">Precio regular: $47 USD</div>
+        <div class="precio-actual">$27 USD</div>
+        <div class="precio-nota">Precio de lanzamiento</div>
+      </div>
+      <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual ✈</a>
+      <p style="font-size:12px;color:var(--gris);margin-top:10px;text-align:center">Acceso inmediato · PDF descargable · Pago seguro</p>
+    </div>
+    <div class="producto-content">
+      <div class="badge">El Manual Completo</div>
+      <h2>El Viajero Premium</h2>
+      <p class="sub">8 módulos · 20 hacks · 18 páginas de información real</p>
+      <div class="modulos">
+        <div class="mod-item"><div class="mod-num">01</div><div><div class="mod-titulo">Salas VIP Sin Tarjeta Black</div><div class="mod-desc">Regus + DragonPass (~$23), LoungeBuddy y acceso gratis en retrasos</div></div></div>
+        <div class="mod-item"><div class="mod-num">02</div><div><div class="mod-titulo">Business Class Sin Pagarlo</div><div class="mod-desc">Subasta Plusgrade, código de tarifa Y/B, overbooking y gate a 45 minutos</div></div></div>
+        <div class="mod-item"><div class="mod-num">03</div><div><div class="mod-titulo">El Sistema de Millas</div><div class="mod-desc">LATAM Pass 2025 sin vuelos mínimos, Avianca LifeMiles con 100% bonificación</div></div></div>
+        <div class="mod-item"><div class="mod-num">04</div><div><div class="mod-titulo">El Check-in Estratégico</div><div class="mod-desc">SeatGuru, comida especial gratis, upgrade durante check-in online</div></div></div>
+        <div class="mod-item"><div class="mod-num">05</div><div><div class="mod-titulo">Upgrades en el Aeropuerto</div><div class="mod-desc">La lista de prioridades real y las palabras exactas que funcionan</div></div></div>
+        <div class="mod-item"><div class="mod-num">06</div><div><div class="mod-titulo">Derechos del Pasajero</div><div class="mod-desc">EC 261/2004 — hasta €600 por pasajero. AirHelp sin costo inicial</div></div></div>
+        <div class="mod-item"><div class="mod-num">07</div><div><div class="mod-titulo">El Equipaje VIP</div><div class="mod-desc">Etiqueta FRÁGIL, Fast Track, FlightAware, TripIt y Expert Flyer</div></div></div>
+        <div class="mod-item"><div class="mod-num">08</div><div><div class="mod-titulo">La Mentalidad del Viajero Premium</div><div class="mod-desc">Sistema de preparación en 3 momentos: 7 días antes, 48hs antes y en el aeropuerto</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ BONUS ════════════════════════════════════════ -->
+<hr class="gold">
+
+<!-- BONUS -->
 <section id="bonus">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:36px;">
-      <div class="badge">Incluido sin costo extra</div>
-      <h2 class="display" style="font-size:clamp(26px,4vw,36px);color:var(--blanco);margin-top:8px;">Bonus Exclusivo</h2>
-    </div>
-    <div class="bonus-card">
-      <div class="bonus-icon">🗺️</div>
-      <div>
-        <div class="bonus-badge">Bonus exclusivo · PDF adicional</div>
-        <div class="bonus-titulo display">Las 20 Salas VIP Más Accesibles desde Latinoamérica</div>
-        <div class="bonus-desc">Aeropuerto por aeropuerto: nombre de la sala, cómo acceder y costo aproximado. Abrís el PDF, buscás tu aeropuerto y tenés la información lista para el próximo viaje.</div>
-        <div class="bonus-valor">Valorado en <strong>$17 USD</strong> — tuyo gratis con el manual</div>
-      </div>
+  <div class="section-header">
+    <div class="badge">Incluido sin costo extra</div>
+    <h2>Bonus Exclusivo</h2>
+  </div>
+  <div class="bonus-card">
+    <div class="bonus-icon">🗺️</div>
+    <div>
+      <div class="bonus-badge">Bonus exclusivo · PDF adicional</div>
+      <div class="bonus-titulo">Las 20 Salas VIP Más Accesibles desde Latinoamérica</div>
+      <div class="bonus-desc">Aeropuerto por aeropuerto: nombre de la sala, cómo acceder y costo aproximado. Abrís el PDF, buscás tu aeropuerto y tenés la información lista para el próximo viaje.</div>
+      <div class="bonus-valor">Valorado en <strong>$17 USD</strong> — tuyo gratis con el manual</div>
     </div>
   </div>
 </section>
 
-<!-- ══ TESTIMONIOS ══════════════════════════════════ -->
+<hr class="gold">
+
+<!-- TESTIMONIOS -->
 <section id="testimonios">
-  <div class="container">
-    <div class="testimonios-header">
-      <div class="badge">Lo que dicen los que ya lo tienen</div>
-      <h2 class="display">Resultados reales</h2>
+  <div class="section-header">
+    <div class="badge">Resultados reales</div>
+    <h2>Lo que dicen los que ya lo tienen</h2>
+  </div>
+  <div class="test-grid">
+    <!-- ✏️ EDITAR: reemplazar con testimonio real 1 -->
+    <div class="test-card">
+      <div class="estrellas">★★★★★</div>
+      <div class="test-txt">"Apliqué el truco de Regus + DragonPass antes de mi vuelo a Madrid y entré a la sala VIP por $23. Recuperé la inversión del manual en el primer viaje."</div>
+      <div class="test-autor">
+        <div class="autor-av">M</div>
+        <div><div class="autor-nombre">Martín G.</div><div class="autor-ciudad">Buenos Aires, Argentina</div></div>
+      </div>
     </div>
-    <div class="testimonios-grid">
-
-      <!-- ✏️ EDITAR: reemplazar con testimonio real 1 -->
-      <div class="testimonio-card">
-        <div class="estrellas">★★★★★</div>
-        <div class="testimonio-texto">"Apliqué el truco de Regus + DragonPass antes de mi vuelo a Madrid y entré a la sala VIP por $23. Recuperé la inversión del manual en el primer viaje."</div>
-        <div class="testimonio-autor">
-          <div class="autor-avatar">M</div>
-          <div>
-            <div class="autor-nombre">Martín G.</div>
-            <div class="autor-ciudad">Buenos Aires, Argentina</div>
-          </div>
-        </div>
+    <!-- ✏️ EDITAR: reemplazar con testimonio real 2 -->
+    <div class="test-card">
+      <div class="estrellas">★★★★★</div>
+      <div class="test-txt">"Reclamé €400 por mi vuelo cancelado con AirHelp. Nunca supe que tenía ese derecho. El manual me devolvió 15 veces lo que pagué."</div>
+      <div class="test-autor">
+        <div class="autor-av">C</div>
+        <div><div class="autor-nombre">Carolina V.</div><div class="autor-ciudad">Bogotá, Colombia</div></div>
       </div>
-
-      <!-- ✏️ EDITAR: reemplazar con testimonio real 2 -->
-      <div class="testimonio-card">
-        <div class="estrellas">★★★★★</div>
-        <div class="testimonio-texto">"Reclamé €400 por mi vuelo cancelado el año pasado usando AirHelp. Nunca supe que tenía ese derecho. El manual me devolvió 15 veces lo que pagué."</div>
-        <div class="testimonio-autor">
-          <div class="autor-avatar">C</div>
-          <div>
-            <div class="autor-nombre">Carolina V.</div>
-            <div class="autor-ciudad">Bogotá, Colombia</div>
-          </div>
-        </div>
+    </div>
+    <!-- ✏️ EDITAR: reemplazar con testimonio real 3 -->
+    <div class="test-card">
+      <div class="estrellas">★★★★★</div>
+      <div class="test-txt">"Conseguí upgrade a Business en un vuelo a Miami usando exactamente las palabras del Módulo 5. Llegué descansado a la reunión más importante del año."</div>
+      <div class="test-autor">
+        <div class="autor-av">D</div>
+        <div><div class="autor-nombre">Diego M.</div><div class="autor-ciudad">Santiago, Chile</div></div>
       </div>
-
-      <!-- ✏️ EDITAR: reemplazar con testimonio real 3 -->
-      <div class="testimonio-card">
-        <div class="estrellas">★★★★★</div>
-        <div class="testimonio-texto">"Conseguí upgrade a Business en un vuelo a Miami usando exactamente las palabras del Módulo 5. Llegué descansado a la reunión más importante del año."</div>
-        <div class="testimonio-autor">
-          <div class="autor-avatar">D</div>
-          <div>
-            <div class="autor-nombre">Diego M.</div>
-            <div class="autor-ciudad">Santiago, Chile</div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══ FAQ ══════════════════════════════════════════ -->
+<hr class="gold">
+
+<!-- FAQ -->
 <section id="faq">
-  <div class="container">
-    <div class="faq-header">
-      <div class="badge">Preguntas frecuentes</div>
-      <h2 class="display">Todo lo que necesitás saber</h2>
+  <div class="section-header">
+    <div class="badge">Preguntas frecuentes</div>
+    <h2>Todo lo que necesitás saber</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">¿Esta información no la puedo encontrar gratis en Google?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar listo para aplicar desde el próximo vuelo.</div></div>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-pregunta">
-          <div class="faq-pregunta-texto">¿Esta información no la puedo encontrar gratis en Google?</div>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-respuesta">
-          <div class="faq-respuesta-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar y ordenado para aplicarlo desde el próximo vuelo.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-pregunta">
-          <div class="faq-pregunta-texto">¿Vale $27 si solo viajo una o dos veces al año?</div>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-respuesta">
-          <div class="faq-respuesta-inner">El Módulo 6 solo — el de derechos del pasajero — puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-pregunta">
-          <div class="faq-pregunta-texto">¿Aplica para viajeros desde Latinoamérica?</div>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-respuesta">
-          <div class="faq-respuesta-inner">Sí. Todo el manual fue verificado desde Argentina, Colombia, Chile y México. Las aerolíneas, las regulaciones y las herramientas referenciadas son específicamente relevantes para viajeros latinoamericanos.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-pregunta">
-          <div class="faq-pregunta-texto">¿Necesito tarjeta black o membresías caras?</div>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-respuesta">
-          <div class="faq-respuesta-inner">No. Ese es exactamente el punto del manual. El Módulo 1 muestra cómo acceder a salas VIP desde $23 USD con una cuenta gratuita. El Módulo 2 muestra cómo conseguir Business sin pagarlo. Nada requiere membresías premium.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-pregunta">
-          <div class="faq-pregunta-texto">¿En cuánto tiempo veo resultados?</div>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-respuesta">
-          <div class="faq-respuesta-inner">En el próximo vuelo que tomes. El Módulo 5 — upgrades en el aeropuerto — se aplica el mismo día. El Módulo 1 se configura en 10 minutos. El Módulo 6 aplica incluso a vuelos de los últimos 3 años que ya tomaste.</div>
-        </div>
-      </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">¿Vale $27 si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">¿Aplica para viajeros desde Latinoamérica?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Sí. Todo fue verificado desde Argentina, Colombia, Chile y México. Las aerolíneas, regulaciones y herramientas son específicamente relevantes para viajeros latinoamericanos.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">¿Necesito tarjeta black o membresías caras?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">No. El Módulo 1 muestra cómo acceder a salas VIP desde $23 con una cuenta gratuita. El Módulo 2 muestra cómo conseguir Business sin pagarlo. Nada requiere membresías premium.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">¿En cuánto tiempo veo resultados?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">En el próximo vuelo que tomes. El Módulo 5 se aplica el mismo día en el aeropuerto. El Módulo 1 se configura en 10 minutos. El Módulo 6 aplica incluso a vuelos de los últimos 3 años.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ══ CTA FINAL ════════════════════════════════════ -->
+<!-- CTA FINAL -->
 <section id="cta-final">
-  <div class="cta-final-inner">
-    <h2 class="display">
-      Empezá a viajar
-      <span>diferente.</span>
-    </h2>
+  <div class="cta-inner">
+    <h2>Empezá a viajar <span>diferente.</span></h2>
     <div class="cta-hr"></div>
-    <p class="cta-final-sub">
-      Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.
-    </p>
-    <div class="cta-final-precio">$27 USD</div>
-    <div class="cta-final-precio-nota">8 módulos · 20 hacks · Precio de lanzamiento</div>
-    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-final-btn">
-      Quiero El Viajero Premium ✈
-    </a>
-    <p class="cta-garantia">Acceso inmediato · PDF descargable · Pago seguro</p>
+    <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
+    <div class="cta-precio">$27 USD</div>
+    <div class="cta-precio-nota">8 módulos · 20 hacks · Precio de lanzamiento</div>
+    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium ✈</a>
+    <p class="cta-garantia">🔒 Acceso inmediato · PDF descargable · Pago seguro</p>
   </div>
 </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">✈ viajealinfinit8</div>
-  <p class="footer-copy">
-    © 2026 Rodrigo Suarez — @viajealinfinit8 — Yacanto, Córdoba, Argentina<br>
-    Todos los derechos reservados.
-  </p>
+  <p class="footer-copy">© 2026 Rodrigo Suarez — @viajealinfinit8 — Yacanto, Córdoba, Argentina<br>Todos los derechos reservados.</p>
 </footer>
 
-<!-- ══ STICKY MOBILE ════════════════════════════════ -->
-<div id="sticky-mobile">
-  <div class="sticky-mobile-inner">
-    <div class="sticky-mobile-precio">
-      <div class="sticky-mobile-tachado">$47 USD</div>
-      <div class="sticky-mobile-actual">$27 USD</div>
+<!-- STICKY MOBILE -->
+<div id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-precio">
+      <div class="sticky-tachado">$47 USD</div>
+      <div class="sticky-actual">$27 USD</div>
     </div>
-    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-mobile-btn">
-      Conseguir el Manual ✈
-    </a>
+    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual ✈</a>
   </div>
 </div>
 
-<!-- ══ JAVASCRIPT ═══════════════════════════════════ -->
 <script>
-// FAQ Acordeón
-document.querySelectorAll('.faq-pregunta').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const respuesta = item.querySelector('.faq-respuesta');
-    const isOpen = item.classList.contains('open');
-    // Cerrar todos
-    document.querySelectorAll('.faq-item').forEach(i => {
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const a=item.querySelector('.faq-a');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
       i.classList.remove('open');
-      i.querySelector('.faq-respuesta').style.maxHeight = '0';
+      i.querySelector('.faq-a').style.maxHeight='0';
     });
-    // Abrir el seleccionado
-    if (!isOpen) {
+    if(!isOpen){
       item.classList.add('open');
-      respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
+      a.style.maxHeight=a.scrollHeight+'px';
     }
   });
 });
-
-// Intersection Observer para animaciones
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, i * 80);
-      observer.unobserve(entry.target);
+// Animaciones scroll
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+      obs.unobserve(e.target);
     }
   });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.dolor-item, .beneficio-card, .testimonio-card').forEach(el => {
-  observer.observe(el);
-});
+},{threshold:0.1});
+document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
