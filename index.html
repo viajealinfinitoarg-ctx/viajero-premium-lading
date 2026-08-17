@@ -24,21 +24,15 @@ body{background:var(--negro);color:var(--blanco2);font-family:'Inter',sans-serif
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 
-/* BANNER COUNTDOWN */
+/* BANNER ESCALERA DE PRECIOS */
 #promo-banner{position:fixed;top:0;left:0;right:0;z-index:101;background:linear-gradient(90deg,#8a2c1f,#a83a24);color:#fff;padding:8px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,0.15)}
 .promo-row1{font-weight:600;letter-spacing:.2px}
 .promo-row1 strong{color:#FFE8B0;font-weight:700}
-.promo-row2{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-weight:600}
+.promo-row2{font-weight:500;opacity:.9;font-size:12px}
 .promo-fecha{background:rgba(0,0,0,0.25);border-radius:4px;padding:2px 7px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:#fff;white-space:nowrap;display:inline-block}
 .precio-urgencia{font-size:12px;color:#D9714F;letter-spacing:.3px;margin-top:8px;font-weight:600}
 .precio-urgencia .promo-fecha{background:rgba(217,113,79,.15);color:#D9714F;padding:1px 6px}
-#promo-timer{display:inline-flex;gap:6px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.5px}
-#promo-timer span{background:rgba(0,0,0,0.25);border-radius:4px;padding:2px 6px;min-width:26px;text-align:center}
-#promo-timer .promo-sep{background:none;padding:0;min-width:auto}
-#promo-banner.is-ended{background:linear-gradient(90deg,#4a4a4a,#5c5c5c)}
-@keyframes promoPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}
-#promo-timer.is-urgent span{animation:promoPulse 1s ease-in-out infinite}
-@media(max-width:520px){#promo-banner{font-size:11.5px;padding:8px 10px}#promo-timer span{padding:2px 5px;min-width:22px}}
+@media(max-width:520px){#promo-banner{font-size:11.5px;padding:8px 10px}}
 
 /* HEADER */
 #header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:top .2s}
@@ -214,24 +208,17 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 </head>
 <body>
 
-<!-- BANNER COUNTDOWN -->
+<!-- BANNER ESCALERA DE PRECIOS -->
 <div id="promo-banner">
-  <div class="promo-row1">🔥 Precio de lanzamiento <strong>$27 USD</strong> — sube a $47 USD 🔥</div>
-  <div class="promo-row2"><span class="promo-fecha">Lunes 17/08</span>
-    <span id="promo-timer">
-      <span id="promo-d">00</span><span class="promo-sep">d</span>
-      <span id="promo-h">00</span><span class="promo-sep">h</span>
-      <span id="promo-m">00</span><span class="promo-sep">m</span>
-      <span id="promo-s">00</span><span class="promo-sep">s</span>
-    </span>
-  </div>
+  <div class="promo-row1">Ayer $27 · Hoy <strong>$47 USD</strong> · <span class="promo-fecha">Sube pronto</span> a $67</div>
+  <div class="promo-row2">Tu oportunidad de viajar VIP sin pagar precios de lujo.</div>
 </div>
 
 <!-- HEADER -->
 <header id="header">
   <div class="header-logo">✈ viajealinfinit8</div>
   <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="header-btn">
-    Conseguir el Manual — $27 USD
+    Conseguir el Manual — $47 USD
   </a>
 </header>
 
@@ -253,7 +240,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
         Quiero El Viajero Premium
       </a>
-      <p class="hero-price"><s>$47 USD</s> &nbsp;→&nbsp; <strong>$27 USD</strong> &nbsp;·&nbsp; Precio de lanzamiento</p>
+      <p class="hero-price"><s>$67 USD</s> &nbsp;→&nbsp; <strong>$47 USD</strong> &nbsp;·&nbsp; Precio actual</p>
     </div>
     <div class="hero-badges">
       <div class="hero-badge">8 Módulos</div>
@@ -335,10 +322,10 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
         <img src="./portada2.png" alt="El Viajero Premium — Manual">
       </div>
       <div class="precio-box">
-        <div class="precio-tachado">Precio regular: $47 USD</div>
-        <div class="precio-actual">$27 USD</div>
-        <div class="precio-nota">Precio de lanzamiento</div>
-        <div class="precio-urgencia">Sube a $47 el <span class="promo-fecha">Lunes 17/8</span></div>
+        <div class="precio-tachado">Precio regular: $67 USD</div>
+        <div class="precio-actual">$47 USD</div>
+        <div class="precio-nota">Precio actual</div>
+        <div class="precio-urgencia">Sube a $67 · <span class="promo-fecha">Próximo precio</span></div>
       </div>
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual</a>
       <p style="font-size:12px;color:var(--gris);margin-top:10px;text-align:center">Acceso inmediato · PDF descargable · Pago seguro</p>
@@ -433,7 +420,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar listo para aplicar desde el próximo vuelo.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><div class="faq-q-txt">¿Vale $27 si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
+      <div class="faq-q"><div class="faq-q-txt">¿Vale $47 si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
       <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
     </div>
     <div class="faq-item">
@@ -457,8 +444,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <h2>Empezá a viajar <span>diferente.</span></h2>
     <div class="cta-hr"></div>
     <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
-    <div class="cta-precio">$27 USD</div>
-    <div class="cta-precio-nota">8 módulos · 20 hacks · Precio de lanzamiento</div>
+    <div class="cta-precio">$47 USD</div>
+    <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual</div>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium</a>
     <p class="cta-garantia">🔒 Acceso inmediato · PDF descargable · Pago seguro</p>
   </div>
@@ -474,8 +461,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <div id="sticky">
   <div class="sticky-inner">
     <div class="sticky-precio">
-      <div class="sticky-tachado">$47 USD</div>
-      <div class="sticky-actual">$27 USD</div>
+      <div class="sticky-tachado">$67 USD</div>
+      <div class="sticky-actual">$47 USD</div>
     </div>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual</a>
   </div>
@@ -509,64 +496,20 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:0.1});
 document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.observe(el));
 
-// Countdown banner: precio sube a $47 el lunes 17/8 00:00 (hora Argentina)
+// Banner de escalera de precios (sin countdown falso): ajusta offsets del header/hero
 (function(){
   var banner = document.getElementById('promo-banner');
-  var timer = document.getElementById('promo-timer');
-  var txt = banner.querySelector('.promo-row1');
-  var row2 = banner.querySelector('.promo-row2');
   var header = document.getElementById('header');
   var hero = document.getElementById('hero');
-  var deadline = new Date('2026-08-17T00:00:00-03:00').getTime();
-  var ocultarDespuesDe = deadline + (48 * 3600000); // banner "terminado" visible 48hs más
 
   function ajustarOffsets(){
     if(!banner) return;
-    var h = banner.style.display === 'none' ? 0 : banner.offsetHeight;
+    var h = banner.offsetHeight;
     header.style.top = h + 'px';
     hero.style.paddingTop = (h + 80) + 'px';
   }
 
-  function mostrarBannerFinalizado(){
-    banner.classList.add('is-ended');
-    row2.style.display = 'none';
-    txt.innerHTML = '🔥 El precio de lanzamiento terminó — ahora <strong>$47 USD</strong> 🔥';
-  }
-
-  function tick(){
-    var ahora = new Date().getTime();
-    var restante = deadline - ahora;
-
-    if(restante <= 0){
-      if(ahora >= ocultarDespuesDe){
-        banner.style.display = 'none';
-        ajustarOffsets();
-        return;
-      }
-      mostrarBannerFinalizado();
-      ajustarOffsets();
-      return;
-    }
-
-    // Pulso visual en las últimas 24hs para intensificar la urgencia
-    if(restante <= 86400000){
-      timer.classList.add('is-urgent');
-    }
-
-    var d = Math.floor(restante / 86400000);
-    var h = Math.floor((restante % 86400000) / 3600000);
-    var m = Math.floor((restante % 3600000) / 60000);
-    var s = Math.floor((restante % 60000) / 1000);
-
-    document.getElementById('promo-d').textContent = String(d).padStart(2,'0');
-    document.getElementById('promo-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('promo-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('promo-s').textContent = String(s).padStart(2,'0');
-  }
-
-  tick();
   ajustarOffsets();
-  setInterval(tick, 1000);
   window.addEventListener('resize', ajustarOffsets);
 })();
 </script>
