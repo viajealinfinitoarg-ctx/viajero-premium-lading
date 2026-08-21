@@ -1,4 +1,22 @@
-<!DOCTYPE html>
+<!-- BANNER URGENCIA -->
+<div id="banner-top" style="position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(90deg,#8B0000,#CC0000,#8B0000);padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
+  <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#fff;text-align:center;">
+    ⏰ Antes <s style="opacity:.6">$27</s> — Ahora <strong style="color:#FFD700">$47</strong> — Sube pronto a <strong style="color:#FFD700">$67</strong> &nbsp;|&nbsp; Tu oportunidad de viajar VIP sin pagar precio de lujo
+  </span>
+  <span id="cd" style="font-family:Inter,sans-serif;font-size:13px;font-weight:800;color:#FFD700;background:rgba(0,0,0,0.3);padding:3px 10px;"></span>
+</div>
+<script>
+(function(){
+  var t=new Date('2025-09-21T00:00:00-03:00');
+  function u(){
+    var d=t-new Date();
+    if(d<=0){document.getElementById('banner-top').style.display='none';return;}
+    var dias=Math.floor(d/86400000),hs=Math.floor((d%86400000)/3600000),min=Math.floor((d%3600000)/60000),seg=Math.floor((d%60000)/1000);
+    document.getElementById('cd').textContent=dias+'d '+String(hs).padStart(2,'0')+'h '+String(min).padStart(2,'0')+'m '+String(seg).padStart(2,'0')+'s';
+  }
+  u();setInterval(u,1000);
+})();
+</script>!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
