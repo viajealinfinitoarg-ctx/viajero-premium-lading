@@ -1,22 +1,4 @@
-<!-- BANNER URGENCIA -->
-<div id="banner-top" style="position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(90deg,#8B0000,#CC0000,#8B0000);padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;">
-  <span style="font-family:Inter,sans-serif;font-size:13px;font-weight:600;color:#fff;text-align:center;">
-    ⏰ Antes <s style="opacity:.6">$27</s> — Ahora <strong style="color:#FFD700">$47</strong> — Sube pronto a <strong style="color:#FFD700">$67</strong> &nbsp;|&nbsp; Tu oportunidad de viajar VIP sin pagar precio de lujo
-  </span>
-  <span id="cd" style="font-family:Inter,sans-serif;font-size:13px;font-weight:800;color:#FFD700;background:rgba(0,0,0,0.3);padding:3px 10px;"></span>
-</div>
-<script>
-(function(){
-  var t=new Date('2025-09-21T00:00:00-03:00');
-  function u(){
-    var d=t-new Date();
-    if(d<=0){document.getElementById('banner-top').style.display='none';return;}
-    var dias=Math.floor(d/86400000),hs=Math.floor((d%86400000)/3600000),min=Math.floor((d%3600000)/60000),seg=Math.floor((d%60000)/1000);
-    document.getElementById('cd').textContent=dias+'d '+String(hs).padStart(2,'0')+'h '+String(min).padStart(2,'0')+'m '+String(seg).padStart(2,'0')+'s';
-  }
-  u();setInterval(u,1000);
-})();
-</script>!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -25,7 +7,7 @@
 <meta name="description" content="El manual que las aerolíneas no quieren que conozcas. Salas VIP, Business Class sin pagarlo, hasta $1.200 USD de compensación. 8 módulos. 20 hacks.">
 <meta property="og:title" content="El Viajero Premium — @viajealinfinit8">
 <meta property="og:description" content="Pagás precio de turista. Viajás como VIP.">
-<meta property="og:image" content="./images/portada2.png">
+<meta property="og:image" content="./portada2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,17 +24,22 @@ body{background:var(--negro);color:var(--blanco2);font-family:'Inter',sans-serif
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 
+/* BANNER URGENCIA */
+#banner-top{position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(90deg,#7A0000 0%,#BB0000 50%,#7A0000 100%);padding:11px 20px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+.banner-txt{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#fff;text-align:center;line-height:1.4;}
+.banner-txt s{opacity:0.55;}
+.banner-txt strong{color:#FFD700;font-weight:800;}
+.banner-cd{font-family:'Inter',sans-serif;font-size:13px;font-weight:800;color:#FFD700;background:rgba(0,0,0,0.3);padding:4px 12px;white-space:nowrap;}
+@media(max-width:600px){#banner-top{padding:8px 14px;gap:6px;}.banner-txt{font-size:11px;}.banner-cd{font-size:11px;}}
+
 /* HEADER */
-#header{position:fixed;top:40px;left:0;right:0;z-index:100;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+#header{position:fixed;top:44px;left:0;right:0;z-index:100;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .header-logo{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;white-space:nowrap}
 .header-btn{background:var(--dorado);color:var(--negro);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;white-space:nowrap;transition:background .2s}
 .header-btn:hover{background:var(--dorado2)}
 
 /* HERO */
-#hero{padding-top:120px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.hero-bg-img{position:absolute;inset:0;z-index:0}
-.hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.22}
-.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,var(--negro) 0%,rgba(8,8,8,0.3) 40%,rgba(8,8,8,0.3) 60%,var(--negro) 100%)}
+#hero{padding-top:124px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,0.07) 0%,#080808 65%)}
 .hero-inner{position:relative;z-index:1;padding:60px 24px 80px;max-width:820px;margin:0 auto;text-align:center}
 .hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--dorado);margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:40px;height:.5px;background:var(--dorado);opacity:.5}
@@ -69,15 +56,15 @@ a{text-decoration:none;color:inherit}
 .hero-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:8px}
 .hero-badge::before{content:'';display:block;width:4px;height:4px;background:var(--dorado);opacity:.6}
 
-/* IMAGEN FULL — portada 3 */
-#img-full{padding:0;overflow:hidden;max-height:520px}
-#img-full img{width:100%;height:520px;object-fit:cover;object-position:center top;opacity:.9}
+/* IMAGEN FULL */
+#img-full{padding:0;overflow:hidden;background:#080808}
+#img-full img{width:100%;height:auto;object-fit:contain;opacity:1}
 
 /* HISTORIA */
 #historia{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:80px 24px}
 .historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:900px;margin:0 auto}
 .historia-img{border:1px solid rgba(201,168,76,.2);overflow:hidden;position:relative}
-.historia-img img{width:100%;height:400px;object-fit:cover;object-position:center}
+.historia-img img{width:100%;height:auto;object-fit:contain;display:block}
 .historia-img-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,8,8,.95),transparent);padding:24px 20px 14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dorado)}
 .historia-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:20px}
 .historia-content h2{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:18px}
@@ -207,121 +194,32 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
   #sticky{display:block}
   body{padding-bottom:76px}
   .header-btn{display:none}
-  #img-full img{height:300px}
 }
 @media(prefers-reduced-motion:reduce){
   .dolor-item,.ben-card,.test-card{opacity:1!important;transform:none!important}
-}
-
-/* BANNER DE URGENCIA */
-#banner-urgencia {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: linear-gradient(90deg, #8B0000 0%, #B00000 50%, #8B0000 100%);
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.banner-texto {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #FFFFFF;
-  letter-spacing: 0.5px;
-  text-align: center;
-  line-height: 1.4;
-}
-.banner-texto span {
-  color: #FFD700;
-  font-weight: 800;
-  font-size: 14px;
-}
-.banner-countdown {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(0,0,0,0.25);
-  padding: 4px 12px;
-  border-radius: 2px;
-}
-.banner-countdown-num {
-  font-family: 'Inter', sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  color: #FFD700;
-  min-width: 26px;
-  text-align: center;
-}
-.banner-countdown-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 9px;
-  color: rgba(255,255,255,0.8);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  line-height: 1.2;
-}
-.banner-sep {
-  color: rgba(255,255,255,0.4);
-  font-size: 16px;
-  font-weight: 300;
-}
-@media(max-width: 480px) {
-  #banner-urgencia { padding: 8px 16px; gap: 8px; }
-  .banner-texto { font-size: 12px; }
-  .banner-countdown-num { font-size: 14px; }
 }
 </style>
 </head>
 <body>
 
 <!-- BANNER URGENCIA -->
-<div id="banner-urgencia">
-  <div class="banner-texto">
-    ⏰ Precio actual <span>$47 USD</span> — El 21 de septiembre sube a <span>$67 USD</span>
-  </div>
-  <div class="banner-countdown">
-    <div>
-      <div class="banner-countdown-num" id="cd-dias">--</div>
-      <div class="banner-countdown-label">días</div>
-    </div>
-    <div class="banner-sep">:</div>
-    <div>
-      <div class="banner-countdown-num" id="cd-horas">--</div>
-      <div class="banner-countdown-label">hs</div>
-    </div>
-    <div class="banner-sep">:</div>
-    <div>
-      <div class="banner-countdown-num" id="cd-min">--</div>
-      <div class="banner-countdown-label">min</div>
-    </div>
-    <div class="banner-sep">:</div>
-    <div>
-      <div class="banner-countdown-num" id="cd-seg">--</div>
-      <div class="banner-countdown-label">seg</div>
-    </div>
-  </div>
+<div id="banner-top">
+  <div class="banner-txt">⏰ Antes <s>$27</s> &nbsp;→&nbsp; Ahora <strong>$47 USD</strong> &nbsp;|&nbsp; Sube a <strong>$67</strong> el 21/09 &nbsp;·&nbsp; Tu oportunidad de viajar VIP sin pagar precio de lujo</div>
+  <div class="banner-cd" id="cd-banner">cargando...</div>
 </div>
 
 <!-- HEADER -->
 <header id="header">
-  <div class="header-logo">✈ viajealinfinit8</div>
+  <div class="header-logo">— viajealinfinit8</div>
   <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="header-btn">
     Conseguir el Manual — $47 USD
   </a>
 </header>
 
-<!-- HERO — usa portada5 de fondo -->
+<!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-img">
-    <img src="./images/portada5.png" alt="El Viajero Premium">
-  </div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">Manual Confidencial ✈</div>
+    <div class="hero-eyebrow">Manual Confidencial</div>
     <h1 class="hero-h1">
       Pagás precio de turista.
       <span>Viajás como VIP.</span>
@@ -331,7 +229,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     </p>
     <div class="hero-cta-wrap">
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
-        Quiero El Viajero Premium ✈
+        Quiero El Viajero Premium
       </a>
       <p class="hero-price"><s>$97 USD</s> &nbsp;→&nbsp; <strong>$47 USD</strong> &nbsp;·&nbsp; Precio actual — sube a $97 pronto</p>
     </div>
@@ -345,21 +243,21 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 
 <!-- IMAGEN FULL — portada3 -->
 <div id="img-full">
-  <img src="./images/portada3.png" alt="El sistema existe. La mayoría no lo usa.">
+  <img src="./portada3.png" alt="El sistema existe. La mayoría no lo usa.">
 </div>
 
 <!-- HISTORIA -->
 <section id="historia">
   <div class="historia-grid">
     <div class="historia-img">
-      <img src="./images/portada2.png" alt="El Viajero Premium">
-      <div class="historia-img-label">✈ La experiencia que lo cambió todo</div>
+      <img src="./portada5.png" alt="El Viajero Premium">
+      <div class="historia-img-label">La experiencia que lo cambió todo</div>
     </div>
     <div class="historia-content">
       <div class="badge">La historia detrás del manual</div>
       <h2>¿Cómo es posible volar en Business pagando Economy?</h2>
-      <p>Volví de Barcelona a Buenos Aires con escala en Brasil. Busqué el vuelo de vuelta durante varios días, siempre en modo incógnito, a distintos horarios. Un día apareció una tarifa que no había visto antes.</p>
-      <p><strong style="color:var(--blanco)">€150 en Premium Economy</strong> — cuando el precio normal era $300. Incluía despacho prioritario en mostrador exclusivo, sala VIP y priority boarding.</p>
+      <p>Estaba con mi pareja. Habíamos tenido unas vacaciones increíbles en España y llegó el momento de volver a Argentina.</p>
+      <p>Busqué el vuelo durante varios días hasta que encontré uno en Premium Economy a <strong style="color:var(--blanco)">€150</strong>. Incluía sala VIP, priority boarding y despacho prioritario.</p>
       <div class="cita">"No fue suerte. Fue método. Saber cuándo buscar, cómo buscar y qué mirar cuando aparece una tarifa así."</div>
       <p>Junté todo ese sistema en un manual. Ocho módulos, veinte hacks, información real que las aerolíneas prefieren que no conozcas.</p>
     </div>
@@ -412,14 +310,14 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <div class="producto-img-wrap">
       <!-- ✏️ EDITAR: reemplazar con mockup real del ebook si tenés uno -->
       <div class="producto-mockup">
-        <img src="./images/portada2.png" alt="El Viajero Premium — Manual">
+        <img src="./portada2.png" alt="El Viajero Premium — Manual">
       </div>
       <div class="precio-box">
         <div class="precio-tachado">Precio regular: $97 USD</div>
         <div class="precio-actual">$47 USD</div>
-        <div class="precio-nota">Precio actual — sube a $97 pronto</div>
+        <div class="precio-nota">Precio actual — sube pronto</div>
       </div>
-      <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual ✈</a>
+      <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual</a>
       <p style="font-size:12px;color:var(--gris);margin-top:10px;text-align:center">Acceso inmediato · PDF descargable · Pago seguro</p>
     </div>
     <div class="producto-content">
@@ -512,16 +410,16 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar listo para aplicar desde el próximo vuelo.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><div class="faq-q-txt">¿Vale $27 si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
+      <div class="faq-q"><div class="faq-q-txt">¿Vale $47 si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es más de 12 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">¿Aplica para viajeros desde Latinoamérica?</div><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">Sí. Todo fue verificado desde Argentina, Colombia, Chile y México. Las aerolíneas, regulaciones y herramientas son específicamente relevantes para viajeros latinoamericanos.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Sí. Todo fue verificado desde Argentina, Colombia, Chile y México. Las aerolíneas, regulaciones y herramientas son específicamente relevantes para viajeros latinoamericanos. Y el módulo de derechos aplica directamente en España también.</div></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">¿Necesito tarjeta black o membresías caras?</div><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">No. El Módulo 1 muestra cómo acceder a salas VIP desde $23 con una cuenta gratuita. El Módulo 2 muestra cómo conseguir Business sin pagarlo. Nada requiere membresías premium.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">No. El Módulo 1 muestra cómo acceder a salas VIP desde $23 USD con una cuenta gratuita. El Módulo 2 muestra cómo conseguir Business sin pagarlo. Nada requiere membresías premium.</div></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">¿En cuánto tiempo veo resultados?</div><div class="faq-icon">+</div></div>
@@ -537,16 +435,16 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <div class="cta-hr"></div>
     <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
     <div class="cta-precio">$47 USD</div>
-    <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual — sube a $97 pronto</div>
-    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium ✈</a>
+    <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual</div>
+    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium</a>
     <p class="cta-garantia">🔒 Acceso inmediato · PDF descargable · Pago seguro</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">✈ viajealinfinit8</div>
-  <p class="footer-copy">© 2026 Rodrigo Suarez — @viajealinfinit8 — Yacanto, Córdoba, Argentina<br>Todos los derechos reservados.</p>
+  <div class="footer-logo">— viajealinfinit8</div>
+  <p class="footer-copy">© 2026 Rodrigo Suarez — @viajealinfinit8 — Córdoba, Argentina<br>Todos los derechos reservados.</p>
 </footer>
 
 <!-- STICKY MOBILE -->
@@ -556,11 +454,23 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="sticky-tachado">$97 USD</div>
       <div class="sticky-actual">$47 USD</div>
     </div>
-    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual ✈</a>
+    <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual</a>
   </div>
 </div>
 
 <script>
+// COUNTDOWN BANNER
+(function(){
+  var fin=new Date('2025-09-21T00:00:00-03:00');
+  function tick(){
+    var diff=fin-new Date();
+    if(diff<=0){document.getElementById('banner-top').style.display='none';return;}
+    var d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-banner').textContent=d+'d '+String(h).padStart(2,'0')+'h '+String(m).padStart(2,'0')+'m '+String(s).padStart(2,'0')+'s';
+  }
+  tick();setInterval(tick,1000);
+})();
+
 // FAQ
 document.querySelectorAll('.faq-q').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -571,46 +481,17 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
       i.classList.remove('open');
       i.querySelector('.faq-a').style.maxHeight='0';
     });
-    if(!isOpen){
-      item.classList.add('open');
-      a.style.maxHeight=a.scrollHeight+'px';
-    }
+    if(!isOpen){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
   });
 });
+
 // Animaciones scroll
 const obs=new IntersectionObserver((entries)=>{
   entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('visible'),i*80);
-      obs.unobserve(e.target);
-    }
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}
   });
 },{threshold:0.1});
 document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.observe(el));
-</script>
-<script>
-// COUNTDOWN BANNER
-(function() {
-  var target = new Date('2025-09-21T00:00:00-03:00');
-  function update() {
-    var now = new Date();
-    var diff = target - now;
-    if (diff <= 0) {
-      document.getElementById('banner-urgencia').style.display = 'none';
-      return;
-    }
-    var dias  = Math.floor(diff / (1000*60*60*24));
-    var horas = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-    var mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
-    var segs  = Math.floor((diff % (1000*60)) / 1000);
-    document.getElementById('cd-dias').textContent  = String(dias).padStart(2,'0');
-    document.getElementById('cd-horas').textContent = String(horas).padStart(2,'0');
-    document.getElementById('cd-min').textContent   = String(mins).padStart(2,'0');
-    document.getElementById('cd-seg').textContent   = String(segs).padStart(2,'0');
-  }
-  update();
-  setInterval(update, 1000);
-})();
 </script>
 </body>
 </html>
