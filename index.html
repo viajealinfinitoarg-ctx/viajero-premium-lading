@@ -24,15 +24,22 @@ body{background:var(--negro);color:var(--blanco2);font-family:'Inter',sans-serif
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 
-/* BANNER ESCALERA DE PRECIOS */
+/* BANNER COUNTDOWN DE TEMPORADA */
 #promo-banner{position:fixed;top:0;left:0;right:0;z-index:101;background:linear-gradient(90deg,#8a2c1f,#a83a24);color:#fff;padding:8px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,0.15)}
 .promo-row1{font-weight:600;letter-spacing:.2px}
 .promo-row1 strong{color:#FFE8B0;font-weight:700}
-.promo-row2{font-weight:500;opacity:.9;font-size:12px}
+.promo-row2{font-weight:500;opacity:.9;font-size:12px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.promo-row2 strong{color:#FFE8B0;font-weight:800}
 .promo-fecha{background:rgba(0,0,0,0.25);border-radius:4px;padding:2px 7px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:#fff;white-space:nowrap;display:inline-block}
 .precio-urgencia{font-size:12px;color:#D9714F;letter-spacing:.3px;margin-top:8px;font-weight:600}
 .precio-urgencia .promo-fecha{background:rgba(217,113,79,.15);color:#D9714F;padding:1px 6px}
-@media(max-width:520px){#promo-banner{font-size:11.5px;padding:8px 10px}}
+#promo-timer{display:inline-flex;gap:6px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.5px}
+#promo-timer span{background:rgba(0,0,0,0.25);border-radius:4px;padding:2px 6px;min-width:24px;text-align:center}
+#promo-timer .promo-sep{background:none;padding:0;min-width:auto}
+#promo-banner.is-ended{background:linear-gradient(90deg,#4a4a4a,#5c5c5c)}
+@keyframes promoPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}
+#promo-timer.is-urgent span{animation:promoPulse 1s ease-in-out infinite}
+@media(max-width:520px){#promo-banner{font-size:11.5px;padding:8px 10px}#promo-timer span{padding:2px 5px;min-width:20px}}
 
 /* HEADER */
 #header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:top .2s}
@@ -208,10 +215,18 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 </head>
 <body>
 
-<!-- BANNER ESCALERA DE PRECIOS -->
+<!-- BANNER COUNTDOWN -->
 <div id="promo-banner">
-  <div class="promo-row1">Ayer $27 · Hoy <strong>$47 USD</strong> · <span class="promo-fecha">Sube pronto</span> a $67</div>
-  <div class="promo-row2">Tu oportunidad de viajar VIP sin pagar precios de lujo.</div>
+  <div class="promo-row1">Últimos días con el precio de <strong>$47 USD</strong></div>
+  <div class="promo-row2" id="promo-row2">
+    <span id="promo-timer">
+      <span id="promo-d">00</span><span class="promo-sep">d</span>
+      <span id="promo-h">00</span><span class="promo-sep">h</span>
+      <span id="promo-m">00</span><span class="promo-sep">m</span>
+      <span id="promo-s">00</span><span class="promo-sep">s</span>
+    </span>
+    <span>· sube a $67 el 21 de septiembre</span>
+  </div>
 </div>
 
 <!-- HEADER -->
@@ -496,20 +511,66 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:0.1});
 document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.observe(el));
 
-// Banner de escalera de precios (sin countdown falso): ajusta offsets del header/hero
+// Banner countdown: precio $47 hasta el 21/9, sube a $67 a partir de esa fecha
 (function(){
   var banner = document.getElementById('promo-banner');
   var header = document.getElementById('header');
   var hero = document.getElementById('hero');
+  var row1 = banner.querySelector('.promo-row1');
+  var row2 = document.getElementById('promo-row2');
+  var timer = document.getElementById('promo-timer');
+
+  var deadline = new Date('2026-09-21T00:00:00-03:00').getTime();
+  var ocultarDespuesDe = deadline + (48 * 3600000); // deja el mensaje de "terminó" visible 48hs
 
   function ajustarOffsets(){
     if(!banner) return;
-    var h = banner.offsetHeight;
+    var h = banner.style.display === 'none' ? 0 : banner.offsetHeight;
     header.style.top = h + 'px';
     hero.style.paddingTop = (h + 80) + 'px';
   }
 
+  function mostrarBannerFinalizado(){
+    banner.classList.add('is-ended');
+    row1.textContent = 'El precio de $47 ya terminó.';
+    row2.innerHTML = 'El Viajero Premium ahora vale <strong>$67 USD</strong>.';
+  }
+
+  function tick(){
+    var ahora = new Date().getTime();
+    var restante = deadline - ahora;
+
+    if(restante <= 0){
+      if(ahora >= ocultarDespuesDe){
+        banner.style.display = 'none';
+        ajustarOffsets();
+        return;
+      }
+      mostrarBannerFinalizado();
+      ajustarOffsets();
+      return;
+    }
+
+    if(restante <= 86400000){
+      timer.classList.add('is-urgent');
+    }
+
+    var d = Math.floor(restante / 86400000);
+    var h = Math.floor((restante % 86400000) / 3600000);
+    var m = Math.floor((restante % 3600000) / 60000);
+    var s = Math.floor((restante % 60000) / 1000);
+
+    document.getElementById('promo-d').textContent = String(d).padStart(2,'0');
+    document.getElementById('promo-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('promo-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('promo-s').textContent = String(s).padStart(2,'0');
+
+    ajustarOffsets();
+  }
+
+  tick();
   ajustarOffsets();
+  setInterval(tick, 1000);
   window.addEventListener('resize', ajustarOffsets);
 })();
 </script>
