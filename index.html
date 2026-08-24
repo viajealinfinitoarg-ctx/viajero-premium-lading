@@ -215,17 +215,18 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 </head>
 <body>
 
-<!-- BANNER COUNTDOWN -->
+<!-- BANNER FLASH SALE -->
 <div id="promo-banner">
-  <div class="promo-row1">Últimos días con el precio de <strong>$47 USD</strong></div>
+  <div class="promo-row1"><span class="promo-fecha">Travel Sale</span> 🔥 Aprovechá tu experiencia VIP sin pagar precios de lujo 🔥</div>
   <div class="promo-row2" id="promo-row2">
+    <strong>$27 USD</strong> ·
     <span id="promo-timer">
       <span id="promo-d">00</span><span class="promo-sep">d</span>
       <span id="promo-h">00</span><span class="promo-sep">h</span>
       <span id="promo-m">00</span><span class="promo-sep">m</span>
       <span id="promo-s">00</span><span class="promo-sep">s</span>
     </span>
-    <span>· sube a $67 el 21 de septiembre</span>
+    <span>· solo hasta el 30/8</span>
   </div>
 </div>
 
@@ -233,7 +234,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <header id="header">
   <div class="header-logo">✈ viajealinfinit8</div>
   <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="header-btn">
-    Conseguir el Manual — $47 USD
+    Conseguir el Manual — <span id="precio-header-actual">$27 USD</span>
   </a>
 </header>
 
@@ -255,7 +256,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
         Quiero El Viajero Premium
       </a>
-      <p class="hero-price"><s>$67 USD</s> &nbsp;→&nbsp; <strong>$47 USD</strong> &nbsp;·&nbsp; Precio actual</p>
+      <p class="hero-price"><s id="precio-hero-tachado">$47 USD</s> &nbsp;→&nbsp; <strong id="precio-hero-actual">$27 USD</strong> &nbsp;·&nbsp; Precio actual</p>
     </div>
     <div class="hero-badges">
       <div class="hero-badge">8 Módulos</div>
@@ -337,10 +338,10 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
         <img src="./portada2.png" alt="El Viajero Premium — Manual">
       </div>
       <div class="precio-box">
-        <div class="precio-tachado">Precio regular: $67 USD</div>
-        <div class="precio-actual">$47 USD</div>
+        <div class="precio-tachado" id="precio-prod-tachado">Precio regular: $47 USD</div>
+        <div class="precio-actual" id="precio-prod-actual">$27 USD</div>
         <div class="precio-nota">Precio actual</div>
-        <div class="precio-urgencia">Sube a $67 · <span class="promo-fecha">Próximo precio</span></div>
+        <div class="precio-urgencia" id="precio-urgencia-txt">Vuelve a $47 · <span class="promo-fecha">31 de agosto</span></div>
       </div>
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual</a>
       <p style="font-size:12px;color:var(--gris);margin-top:10px;text-align:center">Acceso inmediato · PDF descargable · Pago seguro</p>
@@ -435,7 +436,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar listo para aplicar desde el próximo vuelo.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><div class="faq-q-txt">¿Vale $47 si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
+      <div class="faq-q"><div class="faq-q-txt">¿Vale <span id="precio-faq-actual">$27</span> si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
       <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
     </div>
     <div class="faq-item">
@@ -459,7 +460,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <h2>Empezá a viajar <span>diferente.</span></h2>
     <div class="cta-hr"></div>
     <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
-    <div class="cta-precio">$47 USD</div>
+    <div class="cta-precio" id="precio-cta-actual">$27 USD</div>
     <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual</div>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium</a>
     <p class="cta-garantia">🔒 Acceso inmediato · PDF descargable · Pago seguro</p>
@@ -476,8 +477,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <div id="sticky">
   <div class="sticky-inner">
     <div class="sticky-precio">
-      <div class="sticky-tachado">$67 USD</div>
-      <div class="sticky-actual">$47 USD</div>
+      <div class="sticky-tachado" id="precio-sticky-tachado">$47 USD</div>
+      <div class="sticky-actual" id="precio-sticky-actual">$27 USD</div>
     </div>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual</a>
   </div>
@@ -511,7 +512,7 @@ const obs=new IntersectionObserver((entries)=>{
 },{threshold:0.1});
 document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.observe(el));
 
-// Banner countdown: precio $47 hasta el 21/9, sube a $67 a partir de esa fecha
+// Flash sale: $27 USD desde el 24/8 hasta el 30/8. A partir del 31/8 todo vuelve a $47.
 (function(){
   var banner = document.getElementById('promo-banner');
   var header = document.getElementById('header');
@@ -520,8 +521,25 @@ document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.ob
   var row2 = document.getElementById('promo-row2');
   var timer = document.getElementById('promo-timer');
 
-  var deadline = new Date('2026-09-21T00:00:00-03:00').getTime();
+  var deadline = new Date('2026-08-31T00:00:00-03:00').getTime();
   var ocultarDespuesDe = deadline + (48 * 3600000); // deja el mensaje de "terminó" visible 48hs
+
+  function revertirPreciosDeLaPagina(){
+    // Vuelve toda la landing a su precio normal ($47 actual, $67 próximo) sin tocar el banner
+    var pares = [
+      ['precio-hero-tachado','$67 USD'], ['precio-hero-actual','$47 USD'],
+      ['precio-prod-tachado','Precio regular: $67 USD'], ['precio-prod-actual','$47 USD'],
+      ['precio-cta-actual','$47 USD'],
+      ['precio-sticky-tachado','$67 USD'], ['precio-sticky-actual','$47 USD'],
+      ['precio-header-actual','$47 USD'], ['precio-faq-actual','$47']
+    ];
+    pares.forEach(function(p){
+      var el = document.getElementById(p[0]);
+      if(el) el.textContent = p[1];
+    });
+    var urgencia = document.getElementById('precio-urgencia-txt');
+    if(urgencia) urgencia.innerHTML = 'Sube a $67 · <span class="promo-fecha">Próximo precio</span>';
+  }
 
   function ajustarOffsets(){
     if(!banner) return;
@@ -532,8 +550,8 @@ document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.ob
 
   function mostrarBannerFinalizado(){
     banner.classList.add('is-ended');
-    row1.textContent = 'El precio de $47 ya terminó.';
-    row2.innerHTML = 'El Viajero Premium ahora vale <strong>$67 USD</strong>.';
+    row1.textContent = 'La flash sale terminó.';
+    row2.innerHTML = 'El Viajero Premium volvió a <strong>$47 USD</strong>.';
   }
 
   function tick(){
@@ -541,6 +559,7 @@ document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.ob
     var restante = deadline - ahora;
 
     if(restante <= 0){
+      revertirPreciosDeLaPagina();
       if(ahora >= ocultarDespuesDe){
         banner.style.display = 'none';
         ajustarOffsets();
