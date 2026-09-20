@@ -268,7 +268,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
         Quiero El Viajero Premium
       </a>
-      <p class="hero-price"><s id="precio-hero-tachado">$67 USD</s> &nbsp;→&nbsp; <strong id="precio-hero-actual">$47 USD</strong> &nbsp;·&nbsp; Precio actual</p>
+      <p class="hero-price"><s id="precio-hero-tachado">$67 USD</s> &nbsp;→&nbsp; <strong id="precio-hero-actual">$47 USD</strong> &nbsp;·&nbsp; <span id="hero-nota">Precio actual</span></p>
     </div>
     <div class="hero-badges">
       <div class="hero-badge">8 Módulos</div>
@@ -567,12 +567,27 @@ document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.ob
 // ============================================================
 
 var CAMPAIGNS = [
-  // Agregar acá las campañas futuras (Travel Sale, Black Friday, Cyber Monday, etc.)
+  {
+    nombre: 'Relanzamiento $27',
+    inicio: '2026-09-20T00:00:00-03:00',
+    fin: '2026-10-01T00:00:00-03:00',
+    precio: '$27 USD',
+    textoBanner: '⏰ Vuelve a $27 USD — Solo hasta el 1° de octubre. Después sube a $67.'
+  }
+  // Agregar acá las próximas campañas (Black Friday, Cyber Monday, etc.)
 ];
 
 var PRECIO_NORMAL = '$47 USD';
 var PRECIO_ANCLA_NORMAL = '$67 USD';
 var FECHA_SUBA_NORMAL = new Date('2026-09-21T00:00:00-03:00').getTime();
+
+var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+function fechaBonita(ts){
+  var f = new Date(ts);
+  var dia = f.getDate();
+  return (dia === 1 ? '1°' : dia) + ' de ' + MESES[f.getMonth()];
+}
 
 (function(){
   var banner = document.getElementById('promo-banner');
@@ -602,6 +617,13 @@ var FECHA_SUBA_NORMAL = new Date('2026-09-21T00:00:00-03:00').getTime();
     });
     var prod = document.getElementById('precio-prod-tachado');
     if(prod) prod.textContent = 'Precio regular: ' + valorConUSD;
+  }
+
+  // Precio que corresponde apenas termine una campaña: si su fecha de cierre
+  // es posterior a la suba real del 21/9, el precio "de vuelta" ya es $67,
+  // no $47 (evita mostrar un precio intermedio que nunca vas a cobrar).
+  function precioDespuesDe(finTs){
+    return finTs > FECHA_SUBA_NORMAL ? PRECIO_ANCLA_NORMAL : PRECIO_NORMAL;
   }
 
   function campañaActiva(){
@@ -647,17 +669,26 @@ var FECHA_SUBA_NORMAL = new Date('2026-09-21T00:00:00-03:00').getTime();
     banner.classList.remove('is-ended');
 
     if(campaña){
-      // Estado CAMPAÑA: precio especial + banner con nombre + countdown al cierre de la campaña
+      // Estado CAMPAÑA: precio especial + banner + countdown al cierre de la campaña
       var fin = new Date(campaña.fin).getTime();
       var restante = fin - ahora;
+      var precioPost = precioDespuesDe(fin);
+      var precioPostNum = precioPost.replace(' USD','');
 
       setPrecioEnLaPagina(campaña.precio, campaña.precio.replace(' USD',''));
-      setAnclaEnLaPagina(PRECIO_NORMAL);
+      setAnclaEnLaPagina(precioPost);
+
+      var heroNota = document.getElementById('hero-nota');
+      if(heroNota) heroNota.textContent = 'Precio especial hasta el ' + fechaBonita(fin) + ' — después sube a $' + precioPostNum;
 
       var urgenciaCamp = document.getElementById('precio-urgencia-txt');
-      if(urgenciaCamp) urgenciaCamp.innerHTML = 'Vuelve a ' + PRECIO_NORMAL + ' · <span class="promo-fecha">' + campaña.nombre + '</span>';
+      if(urgenciaCamp) urgenciaCamp.innerHTML = 'Sube a $' + precioPostNum + ' el <span class="promo-fecha">' + fechaBonita(fin) + '</span>';
 
-      row1.innerHTML = '<span class="promo-fecha">' + campaña.nombre + '</span> 🔥 ' + campaña.hook + ' 🔥';
+      if(campaña.textoBanner){
+        row1.innerHTML = campaña.textoBanner;
+      } else {
+        row1.innerHTML = '<span class="promo-fecha">' + campaña.nombre + '</span> 🔥 ' + campaña.hook + ' 🔥';
+      }
       row2.innerHTML = '<strong>' + campaña.precio + '</strong> · <span id="promo-timer">' +
         '<span id="promo-d">00</span><span class="promo-sep">d</span>' +
         '<span id="promo-h">00</span><span class="promo-sep">h</span>' +
@@ -676,12 +707,15 @@ var FECHA_SUBA_NORMAL = new Date('2026-09-21T00:00:00-03:00').getTime();
 
     var restanteSuba = FECHA_SUBA_NORMAL - ahora;
     var urgenciaNormal = document.getElementById('precio-urgencia-txt');
+    var heroNotaNormal = document.getElementById('hero-nota');
 
     if(restanteSuba <= 0){
       // Ya pasó el 21/9: el precio normal ahora es $67 (sin ancla, sin countdown)
+      setPrecioEnLaPagina(PRECIO_ANCLA_NORMAL, PRECIO_ANCLA_NORMAL.replace(' USD',''));
       row1.innerHTML = 'Precio actual: <strong>$67 USD</strong>';
       row2.style.display = 'none';
       if(urgenciaNormal) urgenciaNormal.style.display = 'none';
+      if(heroNotaNormal) heroNotaNormal.textContent = 'Precio actual';
       ajustarOffsets();
       return;
     }
@@ -690,6 +724,7 @@ var FECHA_SUBA_NORMAL = new Date('2026-09-21T00:00:00-03:00').getTime();
       urgenciaNormal.style.display = '';
       urgenciaNormal.innerHTML = 'Sube a $67 · <span class="promo-fecha">21 de septiembre</span>';
     }
+    if(heroNotaNormal) heroNotaNormal.textContent = 'Precio actual';
     row1.innerHTML = 'Precio actual: <strong>$47 USD</strong>';
     row2.style.display = 'flex';
     row2.innerHTML = '<span id="promo-timer">' +
