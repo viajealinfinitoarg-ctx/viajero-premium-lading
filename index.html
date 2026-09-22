@@ -58,6 +58,10 @@ a{text-decoration:none;color:inherit}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,78px);font-weight:900;line-height:1.05;color:var(--blanco);letter-spacing:-1px;margin-bottom:6px}
 .hero-h1 span{color:var(--dorado);display:block}
 .hero-sub{font-size:clamp(15px,2.5vw,18px);color:var(--blanco2);opacity:.8;max-width:540px;margin:20px auto 36px;line-height:1.65}
+.hero-video-wrap{position:relative;max-width:620px;margin:0 auto 32px;border:1px solid rgba(201,168,76,.25);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(201,168,76,.08);overflow:hidden}
+.hero-video{display:block;width:100%;height:auto;background:#000}
+.hero-video-sound{position:absolute;bottom:12px;right:12px;background:rgba(8,8,8,.75);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;letter-spacing:.3px;cursor:pointer;transition:background .2s}
+.hero-video-sound:hover{background:rgba(8,8,8,.9)}
 .hero-cta-wrap{max-width:400px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px}
 .prueba-social{font-size:12px;color:var(--dorado);letter-spacing:.3px;font-weight:600;margin:0}
 .roi-txt{font-size:13px;color:var(--gris);text-align:center;margin-bottom:14px;font-style:italic}
@@ -263,6 +267,20 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <p class="hero-sub">
       Lo que las aerolíneas, los lounges y los aeropuertos nunca te van a contar — en un sistema de 8 módulos que cambia tu forma de viajar para siempre.
     </p>
+    <div class="hero-video-wrap">
+      <video
+        id="hero-video"
+        class="hero-video"
+        poster="./hero-video-poster.jpg"
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+      >
+        <source src="./hero-video.mp4" type="video/mp4">
+      </video>
+      <button id="hero-video-sound" class="hero-video-sound" aria-label="Activar sonido">🔇 Activar sonido</button>
+    </div>
     <div class="hero-cta-wrap">
       <p class="prueba-social">⭐ +200 viajeros ya usaron estos hacks para volar distinto</p>
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
@@ -742,6 +760,18 @@ function fechaBonita(ts){
   ajustarOffsets();
   setInterval(tick, 1000);
   window.addEventListener('resize', ajustarOffsets);
+})();
+
+// Video del hero: arranca muteado (requisito de los navegadores), botón para activar sonido
+(function(){
+  var video = document.getElementById('hero-video');
+  var btn = document.getElementById('hero-video-sound');
+  if(!video || !btn) return;
+
+  btn.addEventListener('click', function(){
+    video.muted = !video.muted;
+    btn.textContent = video.muted ? '🔇 Activar sonido' : '🔊 Silenciar';
+  });
 })();
 </script>
 </body>
