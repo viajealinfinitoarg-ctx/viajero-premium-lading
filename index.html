@@ -191,6 +191,7 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 .cta-precio{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;color:var(--dorado);line-height:1;margin-bottom:6px;font-variant-numeric:lining-nums}
 .cta-precio-nota{font-size:12px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
 .cta-bonus-linea{font-size:12.5px;color:var(--dorado);font-weight:600;margin:-14px 0 20px;letter-spacing:.2px}
+.cta-autoridad{font-size:13px;color:var(--blanco2);opacity:.75;max-width:440px;margin:-6px auto 28px;line-height:1.6;font-style:italic}
 .cta-btn{display:block;background:var(--dorado);color:var(--negro);font-weight:800;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:22px 32px;max-width:420px;margin:0 auto;text-align:center;transition:background .2s,transform .15s}
 .cta-btn:hover{background:var(--dorado2);transform:translateY(-2px)}
 .cta-garantia{margin-top:18px;font-size:13px;color:var(--gris);display:flex;align-items:center;justify-content:center;gap:8px}
@@ -370,21 +371,20 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       </div>
       <div class="roi-txt">Con el primer hack que aplicás, ya recuperás la inversión.</div>
       <div class="precio-box">
-        <div class="precio-tachado" id="precio-prod-tachado">Precio regular: $67 USD</div>
+        <div class="precio-tachado" id="precio-prod-tachado">Valor real de este sistema: $67 USD</div>
         <div class="precio-actual" id="precio-prod-actual">$47 USD</div>
         <div class="precio-nota">Precio actual</div>
         <div class="precio-urgencia" id="precio-urgencia-txt">Sube a $67 · <span class="promo-fecha">21 de septiembre</span></div>
       </div>
       <div class="bonus-box">
-        <div class="bonus-tag">🎁 Bonus por tiempo limitado</div>
+        <div class="bonus-tag">🎁 Bonus incluido, por tiempo limitado</div>
         <div class="bonus-titulo">Acceso anticipado a la app Hack Finder</div>
-        <p class="bonus-desc">La app que te dice en segundos qué lounge, qué salida y qué hack usar en +58 aeropuertos.</p>
+        <p class="bonus-desc">Vale $97 USD y hoy te la llevás gratis.</p>
         <ul class="bonus-lista">
-          <li>Diseño simple, todo en el celular</li>
-          <li>Guardá tus rutas favoritas</li>
-          <li>Valor futuro: <strong>$97 USD</strong> — hoy va incluida gratis</li>
+          <li>+58 aeropuertos, toda la info en tu celular</li>
+          <li>Guardá y consultá tus rutas cuando quieras</li>
+          <li>Cuando termine la beta se vende por separado. Quien compra ahora la conserva gratis para siempre.</li>
         </ul>
-        <p class="bonus-nota">Cuando termine la beta, la app se vende por separado. Los que compran ahora se la quedan gratis para siempre.</p>
       </div>
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual</a>
       <p style="font-size:12px;color:var(--gris);margin-top:10px;text-align:center">Acceso inmediato · PDF descargable · Pago seguro</p>
@@ -505,7 +505,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
     <div class="cta-precio" id="precio-cta-actual">$47 USD</div>
     <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual</div>
-    <p class="cta-bonus-linea">🎁 Incluye acceso anticipado a la app Hack Finder — gratis solo por ahora</p>
+    <p class="cta-bonus-linea">🎁 Incluye acceso anticipado a la app Hack Finder, gratis solo por ahora</p>
+    <p class="cta-autoridad">Más de 10 años aplicando lo que aprendí sobre viajes para desbloquear beneficios que la mayoría ni sabe que existen. Un sistema comprobado que me ayudó a conseguir viajes de mayor calidad y comodidad, sin pagar precios de lujo.</p>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium</a>
     <p class="cta-garantia">🔒 Acceso inmediato · PDF descargable · Pago seguro</p>
   </div>
@@ -635,7 +636,7 @@ function fechaBonita(ts){
       if(el) el.textContent = valorConUSD;
     });
     var prod = document.getElementById('precio-prod-tachado');
-    if(prod) prod.textContent = 'Precio regular: ' + valorConUSD;
+    if(prod) prod.textContent = 'Valor real de este sistema: ' + valorConUSD;
   }
 
   // Precio que corresponde apenas termine una campaña: si su fecha de cierre
