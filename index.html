@@ -58,6 +58,7 @@ a{text-decoration:none;color:inherit}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,78px);font-weight:900;line-height:1.05;color:var(--blanco);letter-spacing:-1px;margin-bottom:6px}
 .hero-h1 span{color:var(--dorado);display:block}
 .hero-sub{font-size:clamp(15px,2.5vw,18px);color:var(--blanco2);opacity:.8;max-width:540px;margin:20px auto 36px;line-height:1.65}
+.hero-identificacion{font-size:13.5px;color:var(--dorado);opacity:.9;max-width:460px;margin:-20px auto 24px;line-height:1.5;font-weight:600}
 .hero-video-wrap{position:relative;max-width:620px;margin:0 auto 32px;border:1px solid rgba(201,168,76,.25);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(201,168,76,.08);overflow:hidden}
 .hero-video{display:block;width:100%;height:auto;background:#000}
 .hero-video-sound{position:absolute;top:12px;right:12px;background:rgba(8,8,8,.75);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;letter-spacing:.3px;cursor:pointer;opacity:1;transition:opacity .35s,background .2s}
@@ -269,6 +270,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <p class="hero-sub">
       Lo que las aerolíneas, los lounges y los aeropuertos nunca te van a contar — en un sistema de 8 módulos que cambia tu forma de viajar para siempre.
     </p>
+    <p class="hero-identificacion">¿Viajás poco, ya sabés viajar, o no confiás en comprar algo que no conocés? Mirá el video de 1 minuto antes de decidir.</p>
     <div class="hero-video-wrap">
       <video
         id="hero-video"
@@ -483,6 +485,10 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
     </div>
     <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">Ya sé viajar, ¿para qué necesito esto?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">No es para aprender a viajar. Es para acceder al sistema que usan los que viajan distinto. Las salas VIP, los upgrades y las compensaciones no son un tema de experiencia, son un tema de información que la mayoría nunca busca porque no sabe que existe.</div></div>
+    </div>
+    <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">¿Aplica para viajeros desde Latinoamérica?</div><div class="faq-icon">+</div></div>
       <div class="faq-a"><div class="faq-a-inner">Sí. Todo fue verificado desde Argentina, Colombia, Chile y México. Las aerolíneas, regulaciones y herramientas son específicamente relevantes para viajeros latinoamericanos.</div></div>
     </div>
@@ -491,8 +497,16 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">No. El Módulo 1 muestra cómo acceder a salas VIP desde $23 con una cuenta gratuita. El Módulo 2 muestra cómo conseguir Business sin pagarlo. Nada requiere membresías premium.</div></div>
     </div>
     <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">¿Esto tiene letra chica o es complicado de aplicar?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">No necesitás ninguna app especial ni conocimientos técnicos. Son conversaciones que tenés en el aeropuerto y búsquedas que hacés antes de comprar el pasaje.</div></div>
+    </div>
+    <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">¿En cuánto tiempo veo resultados?</div><div class="faq-icon">+</div></div>
       <div class="faq-a"><div class="faq-a-inner">En el próximo vuelo que tomes. El Módulo 5 se aplica el mismo día en el aeropuerto. El Módulo 1 se configura en 10 minutos. El Módulo 6 aplica incluso a vuelos de los últimos 3 años.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><div class="faq-q-txt">El precio suena bajo, ¿por qué no cuesta más?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Porque lo pensé para que tu primera "compra" real sea el hack que aplicás, no el manual en sí. El precio es accesible a propósito, no una señal de que falta contenido.</div></div>
     </div>
   </div>
 </section>
@@ -593,6 +607,13 @@ var CAMPAIGNS = [
     fin: '2026-10-01T00:00:00-03:00',
     precio: '$27 USD',
     textoBanner: '⏰ Vuelve a $27 USD — Solo hasta el 1° de octubre. Después sube a $67.'
+  },
+  {
+    nombre: 'Octubre $27',
+    inicio: '2026-10-01T20:00:00-03:00',
+    fin: '2026-11-01T00:00:00-03:00',
+    precio: '$27 USD',
+    textoBanner: '⏰ $27 USD — Solo durante octubre. Después sube a $67.'
   }
   // Agregar acá las próximas campañas (Black Friday, Cyber Monday, etc.)
 ];
