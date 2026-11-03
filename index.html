@@ -137,6 +137,19 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 .bonus-lista li::before{content:'✓';position:absolute;left:0;color:var(--dorado);font-weight:700}
 .bonus-lista strong{color:var(--dorado)}
 .bonus-nota{font-size:11.5px;color:var(--gris);font-style:italic;line-height:1.4;margin:0}
+.recibis-lista{list-style:none;padding:0;margin:16px 0 4px;display:flex;flex-direction:column;gap:7px}
+.recibis-lista li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--blanco);line-height:1.4}
+.pago-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pago-pill{font-size:11.5px;font-weight:700;letter-spacing:.3px;color:var(--gris);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:5px 12px}
+.pago-micro{font-size:12px;color:var(--gris);text-align:center;margin:10px 0 0;line-height:1.5}
+.garantia-box{margin-top:12px;padding:10px 14px;border:1px solid rgba(201,168,76,.3);border-radius:2px;font-size:12px;color:var(--blanco2);text-align:center;line-height:1.5}
+.garantia-box[hidden]{display:none}
+.garantia-cta{max-width:420px;margin:16px auto 0}
+.garantia-mini{font-size:12px;color:var(--gris);margin-top:8px}
+.pago-moneda{font-size:12px;color:var(--gris);text-align:center;margin:8px 0 0;line-height:1.5}
+.pago-moneda:empty{display:none}
+.soporte-linea{font-size:12px;color:var(--gris);text-align:center;margin:12px 0 0}
+.soporte-linea a{color:var(--dorado);text-decoration:underline;text-underline-offset:2px}
 .btn-gold{display:block;background:var(--dorado);color:var(--negro);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:17px 28px;text-align:center;transition:background .2s,transform .15s;margin-top:12px;width:100%}
 .btn-gold:hover{background:var(--dorado2);transform:translateY(-1px)}
 .producto-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
@@ -252,7 +265,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <header id="header">
   <div class="header-logo">✈ viajealinfinit8</div>
   <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="header-btn">
-    Conseguir el Manual — <span id="precio-header-actual">$47 USD</span>
+    Conseguir el Manual — <span id="precio-header-actual">$27 USD</span>
   </a>
 </header>
 
@@ -290,7 +303,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
         Quiero El Viajero Premium
       </a>
-      <p class="hero-price"><s id="precio-hero-tachado">$67 USD</s> &nbsp;→&nbsp; <strong id="precio-hero-actual">$47 USD</strong> &nbsp;·&nbsp; <span id="hero-nota">Precio actual</span></p>
+      <p class="hero-price"><s id="precio-hero-tachado">$67 USD</s> &nbsp;→&nbsp; <strong id="precio-hero-actual">$27 USD</strong> &nbsp;·&nbsp; <span id="hero-nota">Precio especial hasta el 1° de noviembre, después sube a $67</span></p>
+      <p class="garantia-mini">🛡️ Garantía de 7 días, sin preguntas</p>
     </div>
     <div class="hero-badges">
       <div class="hero-badge">8 Módulos</div>
@@ -363,6 +377,43 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 
 <hr class="gold">
 
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="section-header">
+    <div class="badge">Resultados reales</div>
+    <h2>Lo que dicen los que ya lo tienen</h2>
+  </div>
+  <div class="test-grid">
+    <!-- ✏️ EDITAR: reemplazar con testimonio real 1 -->
+    <div class="test-card">
+      <div class="estrellas">★★★★★</div>
+      <div class="test-txt">"Apliqué el truco de Regus + DragonPass antes de mi vuelo a Madrid y entré a la sala VIP por $23. Recuperé la inversión del manual en el primer viaje."</div>
+      <div class="test-autor">
+        <div class="autor-av">M</div>
+        <div><div class="autor-nombre">Martín G.</div><div class="autor-ciudad">Buenos Aires, Argentina</div></div>
+      </div>
+    </div>
+    <!-- ✏️ EDITAR: reemplazar con testimonio real 2 -->
+    <div class="test-card">
+      <div class="estrellas">★★★★★</div>
+      <div class="test-txt">"Reclamé €400 por mi vuelo cancelado con AirHelp. Nunca supe que tenía ese derecho. El manual me devolvió 15 veces lo que pagué."</div>
+      <div class="test-autor">
+        <div class="autor-av">C</div>
+        <div><div class="autor-nombre">Carolina V.</div><div class="autor-ciudad">Bogotá, Colombia</div></div>
+      </div>
+    </div>
+    <!-- ✏️ EDITAR: reemplazar con testimonio real 3 -->
+    <div class="test-card">
+      <div class="estrellas">★★★★★</div>
+      <div class="test-txt">"Conseguí upgrade a Business en un vuelo a Miami usando exactamente las palabras del Módulo 5. Llegué descansado a la reunión más importante del año."</div>
+      <div class="test-autor">
+        <div class="autor-av">D</div>
+        <div><div class="autor-nombre">Diego M.</div><div class="autor-ciudad">Santiago, Chile</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRODUCTO -->
 <section id="producto">
   <div class="producto-grid">
@@ -374,9 +425,9 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="roi-txt">Con el primer hack que aplicás, ya recuperás la inversión.</div>
       <div class="precio-box">
         <div class="precio-tachado" id="precio-prod-tachado">Valor real de este sistema: $67 USD</div>
-        <div class="precio-actual" id="precio-prod-actual">$47 USD</div>
+        <div class="precio-actual" id="precio-prod-actual">$27 USD</div>
         <div class="precio-nota">Precio actual</div>
-        <div class="precio-urgencia" id="precio-urgencia-txt">Sube a $67 · <span class="promo-fecha">21 de septiembre</span></div>
+        <div class="precio-urgencia" id="precio-urgencia-txt">Sube a $67 el <span class="promo-fecha">1° de noviembre</span></div>
       </div>
       <div class="bonus-box">
         <div class="bonus-tag">🎁 Bonus incluido, por tiempo limitado</div>
@@ -388,8 +439,18 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
           <li>Cuando termine la beta se vende por separado. Quien compra ahora la conserva gratis para siempre.</li>
         </ul>
       </div>
+      <ul class="recibis-lista">
+        <li><span>🔥</span><span>PDF con los 20 hacks probados</span></li>
+        <li><span>🔥</span><span>Guía exclusiva de geo-arbitraje</span></li>
+        <li><span>📲</span><span>App Hack Finder con todos los hacks en tu celular</span></li>
+      </ul>
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="btn-gold">Conseguir el Manual</a>
-      <p style="font-size:12px;color:var(--gris);margin-top:10px;text-align:center">Acceso inmediato · PDF descargable · Pago seguro</p>
+      <div class="pago-logos"><span class="pago-pill">Mercado Pago</span><span class="pago-pill">PayPal</span></div>
+      <p class="pago-micro">🔒 Pago seguro · Acceso inmediato por mail · Pagás en pesos (Mercado Pago) o en dólares (PayPal)</p>
+      <p class="pago-moneda" id="pago-moneda"></p>
+      <!-- GARANTÍA: publicada -->
+      <div class="garantia-box">🛡️ Garantía de 7 días. Si no es lo que esperabas, te devuelvo tu dinero, sin preguntas.</div>
+      <p class="soporte-linea">¿Dudas? Escribime a <a href="mailto:viajealinfinitoarg@gmail.com">viajealinfinitoarg@gmail.com</a></p>
     </div>
     <div class="producto-content">
       <div class="badge">El Manual Completo</div>
@@ -430,42 +491,6 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 
 <hr class="gold">
 
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <div class="section-header">
-    <div class="badge">Resultados reales</div>
-    <h2>Lo que dicen los que ya lo tienen</h2>
-  </div>
-  <div class="test-grid">
-    <!-- ✏️ EDITAR: reemplazar con testimonio real 1 -->
-    <div class="test-card">
-      <div class="estrellas">★★★★★</div>
-      <div class="test-txt">"Apliqué el truco de Regus + DragonPass antes de mi vuelo a Madrid y entré a la sala VIP por $23. Recuperé la inversión del manual en el primer viaje."</div>
-      <div class="test-autor">
-        <div class="autor-av">M</div>
-        <div><div class="autor-nombre">Martín G.</div><div class="autor-ciudad">Buenos Aires, Argentina</div></div>
-      </div>
-    </div>
-    <!-- ✏️ EDITAR: reemplazar con testimonio real 2 -->
-    <div class="test-card">
-      <div class="estrellas">★★★★★</div>
-      <div class="test-txt">"Reclamé €400 por mi vuelo cancelado con AirHelp. Nunca supe que tenía ese derecho. El manual me devolvió 15 veces lo que pagué."</div>
-      <div class="test-autor">
-        <div class="autor-av">C</div>
-        <div><div class="autor-nombre">Carolina V.</div><div class="autor-ciudad">Bogotá, Colombia</div></div>
-      </div>
-    </div>
-    <!-- ✏️ EDITAR: reemplazar con testimonio real 3 -->
-    <div class="test-card">
-      <div class="estrellas">★★★★★</div>
-      <div class="test-txt">"Conseguí upgrade a Business en un vuelo a Miami usando exactamente las palabras del Módulo 5. Llegué descansado a la reunión más importante del año."</div>
-      <div class="test-autor">
-        <div class="autor-av">D</div>
-        <div><div class="autor-nombre">Diego M.</div><div class="autor-ciudad">Santiago, Chile</div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <hr class="gold">
 
@@ -481,8 +506,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar listo para aplicar desde el próximo vuelo.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><div class="faq-q-txt">¿Vale <span id="precio-faq-actual">$47</span> si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es 22 veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
+      <div class="faq-q"><div class="faq-q-txt">¿Vale <span id="precio-faq-actual">$27</span> si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es <span id="faq-multiplo">22</span> veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">Ya sé viajar, ¿para qué necesito esto?</div><div class="faq-icon">+</div></div>
@@ -517,12 +542,15 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <h2>Empezá a viajar <span>diferente.</span></h2>
     <div class="cta-hr"></div>
     <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
-    <div class="cta-precio" id="precio-cta-actual">$47 USD</div>
+    <div class="cta-precio" id="precio-cta-actual">$27 USD</div>
     <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual</div>
     <p class="cta-bonus-linea">🎁 Incluye acceso anticipado a la app Hack Finder, gratis solo por ahora</p>
     <p class="cta-autoridad">Más de 10 años aplicando lo que aprendí sobre viajes para desbloquear beneficios que la mayoría ni sabe que existen. Un sistema comprobado que me ayudó a conseguir viajes de mayor calidad y comodidad, sin pagar precios de lujo.</p>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="cta-btn">Quiero El Viajero Premium</a>
+    <div class="pago-logos"><span class="pago-pill">Mercado Pago</span><span class="pago-pill">PayPal</span></div>
+    <div class="garantia-box garantia-cta">🛡️ Garantía de 7 días. Si no es lo que esperabas, te devuelvo tu dinero, sin preguntas.</div>
     <p class="cta-garantia">🔒 Acceso inmediato · PDF descargable · Pago seguro</p>
+    <p class="soporte-linea">¿Dudas? Escribime a <a href="mailto:viajealinfinitoarg@gmail.com">viajealinfinitoarg@gmail.com</a></p>
   </div>
 </section>
 
@@ -537,7 +565,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
   <div class="sticky-inner">
     <div class="sticky-precio">
       <div class="sticky-tachado" id="precio-sticky-tachado">$67 USD</div>
-      <div class="sticky-actual" id="precio-sticky-actual">$47 USD</div>
+      <div class="sticky-actual" id="precio-sticky-actual">$27 USD</div>
     </div>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual</a>
   </div>
@@ -614,6 +642,13 @@ var CAMPAIGNS = [
     fin: '2026-11-01T00:00:00-03:00',
     precio: '$27 USD',
     textoBanner: '⏰ $27 USD — Solo durante octubre. Después sube a $67.'
+  },
+  {
+    nombre: 'Mes Cyber $27',
+    inicio: '2026-11-03T00:00:00-03:00',
+    fin: '2026-12-01T00:00:00-03:00',
+    precio: '$27 USD',
+    textoBanner: '🔥 MES CYBER: $27 USD, solo durante noviembre. Después sube a $67.'
   }
   // Agregar acá las próximas campañas (Black Friday, Cyber Monday, etc.)
 ];
@@ -649,6 +684,9 @@ function fechaBonita(ts){
     });
     var faq = document.getElementById('precio-faq-actual');
     if(faq) faq.textContent = valorSinUSD;
+    var mult = document.getElementById('faq-multiplo');
+    var num = parseInt(String(valorSinUSD).replace(/[^0-9]/g,''),10);
+    if(mult && num) mult.textContent = Math.round(600 / num);
   }
 
   function setAnclaEnLaPagina(valorConUSD){
@@ -709,6 +747,16 @@ function fechaBonita(ts){
     banner.style.display = '';
     banner.classList.remove('is-ended');
 
+    // Línea de monedas bajo el botón: el monto en pesos es fijo y solo existe para el precio de octubre ($27 USD).
+    var monedaEl = document.getElementById('pago-moneda');
+    if(monedaEl){
+      var precioVigente = campaña ? campaña.precio : (FECHA_SUBA_NORMAL - ahora <= 0 ? PRECIO_ANCLA_NORMAL : PRECIO_NORMAL);
+      var PESOS_FIJOS = {'$27 USD':'$37.000'};
+      var pesos = PESOS_FIJOS[precioVigente];
+      monedaEl.textContent = 'Podés pagar en pesos argentinos con Mercado Pago (tarjeta de crédito, débito o transferencia) o en dólares con PayPal. El precio es USD ' +
+        precioVigente.replace(/[^0-9]/g,'') + (pesos ? ', o ' + pesos + ' en pesos.' : '.');
+    }
+
     if(campaña){
       // Estado CAMPAÑA: precio especial + banner + countdown al cierre de la campaña
       var fin = new Date(campaña.fin).getTime();
@@ -720,10 +768,10 @@ function fechaBonita(ts){
       setAnclaEnLaPagina(precioPost);
 
       var heroNota = document.getElementById('hero-nota');
-      if(heroNota) heroNota.textContent = 'Precio especial hasta el ' + fechaBonita(fin) + ' — después sube a $' + precioPostNum;
+      if(heroNota) heroNota.textContent = 'Precio especial hasta el ' + fechaBonita(fin) + ' — después sube a ' + precioPostNum;
 
       var urgenciaCamp = document.getElementById('precio-urgencia-txt');
-      if(urgenciaCamp) urgenciaCamp.innerHTML = 'Sube a $' + precioPostNum + ' el <span class="promo-fecha">' + fechaBonita(fin) + '</span>';
+      if(urgenciaCamp) urgenciaCamp.innerHTML = 'Sube a ' + precioPostNum + ' el <span class="promo-fecha">' + fechaBonita(fin) + '</span>';
 
       if(campaña.textoBanner){
         row1.innerHTML = campaña.textoBanner;
