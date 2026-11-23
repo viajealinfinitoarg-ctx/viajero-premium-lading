@@ -658,9 +658,9 @@ document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.ob
 // Al pasar fin (o con activa:false) vuelve a PRECIO_FIJO:
 // sin countdown, sin tachado y sin texto de "sube a".
 //
-// PESOS_TIENDUP: monto que cobra Tiendup, no una conversión.
-// Dejar {} hasta que Rodrigo publique el precio en pesos.
-// Ejemplo de forma, sin monto inventado: {'$47 USD': '<monto de Tiendup>'}
+// PESOS_TIENDUP: monto que Tiendup cobra junto al precio en dólares.
+// Rodrigo publicó USD 47 = ARS 57.000 (figura 57000). No es una conversión calculada.
+// La línea vive en #pago-moneda, que ya estaba en el diseño.
 //
 // MOSTRAR_PRUEBA_SOCIAL: +200 viajeros y los 3 testimonios.
 // Rodrigo confirmó que son reales. false los vuelve a ocultar.
@@ -675,7 +675,7 @@ var PROMO = {
   textoBanner: ''
 };
 
-var PESOS_TIENDUP = {};
+var PESOS_TIENDUP = {'$47 USD': 'ARS 57.000'};
 
 var MOSTRAR_PRUEBA_SOCIAL = true;
 
