@@ -99,6 +99,18 @@ a{text-decoration:none;color:inherit}
 .hero-badge{font-size:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:8px}
 .hero-badge::before{content:'';display:block;width:4px;height:4px;background:var(--dorado);opacity:.6}
 
+/* HACK FINDER — propuesta, misma paleta */
+#hack-finder{padding:72px 24px 64px;background:var(--negro);border-top:1px solid rgba(201,168,76,.15)}
+#hack-finder .section-header{margin-bottom:28px}
+#hack-finder .section-header h2{max-width:740px;margin-left:auto;margin-right:auto}
+.hf-nums{display:flex;justify-content:center;gap:28px;margin:0 auto 28px;max-width:520px}
+.hf-num{flex:1;text-align:center;border:1px solid rgba(201,168,76,.25);padding:16px 12px;background:var(--negro2)}
+.hf-num strong{display:block;font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:var(--dorado);line-height:1}
+.hf-num span{display:block;margin-top:6px;font-size:14px;letter-spacing:.4px;text-transform:uppercase;color:var(--blanco2)}
+.hf-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:800px;margin:0 auto;list-style:none;padding:0}
+.hf-grid li{background:var(--negro3);border:1px solid rgba(201,168,76,.12);padding:16px 18px;font-size:15px;color:var(--blanco);line-height:1.4}
+.hf-grid li::before{content:'✓ ';color:var(--dorado);font-weight:700}
+
 /* IMAGEN FULL — portada 3 */
 #img-full{padding:0;overflow:hidden;background:#080808}
 #img-full img{width:100%;height:auto;object-fit:contain;opacity:1}
@@ -255,6 +267,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
   .historia-grid{grid-template-columns:1fr;gap:32px}
   .historia-img{display:none}
   .beneficios-grid{grid-template-columns:1fr}
+  .hf-grid{grid-template-columns:1fr}
+  .hf-num strong{font-size:34px}
   .producto-grid{grid-template-columns:1fr}
   .producto-img-wrap{position:static}
   .test-grid{grid-template-columns:1fr}
@@ -340,6 +354,26 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="hero-badge">Investigación Real 2026</div>
     </div>
   </div>
+</section>
+
+<!-- HACK FINDER -->
+<section id="hack-finder">
+  <div class="section-header">
+    <div class="badge">Hack Finder</div>
+    <h2>La app que todo viajero quisiera tener para conseguir mejores oportunidades en cada viaje</h2>
+  </div>
+  <div class="hf-nums">
+    <div class="hf-num"><strong>63</strong><span>aeropuertos</span></div>
+    <div class="hf-num"><strong>28</strong><span>salas VIP</span></div>
+  </div>
+  <ul class="hf-grid">
+    <li>Salas VIP por ruta</li>
+    <li>Compensación por demora</li>
+    <li>Qué revisar de la tarifa</li>
+    <li>Programas de stopover</li>
+    <li>Rutas guardadas</li>
+    <li>Se instala en el celular</li>
+  </ul>
 </section>
 
 <!-- IMAGEN FULL — portada3 -->
