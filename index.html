@@ -4,15 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Viajero Premium — Pagás precio de turista. Viajás como VIP.</title>
-<meta name="description" content="El manual que las aerolíneas no quieren que conozcas. Salas VIP, Business Class sin pagarlo, hasta $1.200 USD de compensación. 8 módulos. 20 hacks.">
+<meta name="description" content="El manual que las aerolíneas no quieren que conozcas. Salas VIP, Business Class sin pagarlo, hasta €600 de compensación. 8 módulos. 20 hacks.">
+<link rel="canonical" href="https://www.viajealinfinito.com/">
 <meta property="og:title" content="El Viajero Premium — @viajealinfinit8">
 <meta property="og:description" content="Pagás precio de turista. Viajás como VIP.">
-<meta property="og:image" content="./portada2.png">
+<meta property="og:image" content="https://www.viajealinfinito.com/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="El Viajero Premium">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="icon" href="./favicon-32.png" type="image/png" sizes="32x32">
+<link rel="preload" as="image" href="./hero-video-poster.jpg" fetchpriority="high">
+<!-- Meta Pixel. Revertir: borrar este bloque y el listener de InitiateCheckout al final del script. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1104071129079962');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1104071129079962&ev=PageView&noscript=1"></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none !important}
 :root{
   --negro:#080808;--negro2:#111111;--negro3:#1A1A1A;--negro4:#222222;
   --dorado:#C9A84C;--dorado2:#E8C96A;
@@ -22,16 +45,17 @@
 html{scroll-behavior:smooth}
 body{background:var(--negro);color:var(--blanco2);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
 img{max-width:100%;display:block}
+picture{display:block;width:100%}
 a{text-decoration:none;color:inherit}
 
 /* BANNER COUNTDOWN DE TEMPORADA */
-#promo-banner{position:fixed;top:0;left:0;right:0;z-index:101;background:linear-gradient(90deg,#8a2c1f,#a83a24);color:#fff;padding:8px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,0.15)}
+#promo-banner{position:fixed;top:0;left:0;right:0;z-index:101;background:linear-gradient(90deg,#8a2c1f,#a83a24);color:#fff;padding:8px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.15)}
 .promo-row1{font-weight:600;letter-spacing:.2px}
 .promo-row1 strong{color:#FFE8B0;font-weight:700}
-.promo-row2{font-weight:500;opacity:.9;font-size:12px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.promo-row2{font-weight:500;opacity:.9;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
 .promo-row2 strong{color:#FFE8B0;font-weight:800}
 .promo-fecha{background:rgba(0,0,0,0.25);border-radius:4px;padding:2px 7px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:#fff;white-space:nowrap;display:inline-block}
-.precio-urgencia{font-size:12px;color:#D9714F;letter-spacing:.3px;margin-top:8px;font-weight:600}
+.precio-urgencia{font-size:14px;color:#D9714F;letter-spacing:.3px;margin-top:8px;font-weight:600}
 .precio-urgencia .promo-fecha{background:rgba(217,113,79,.15);color:#D9714F;padding:1px 6px}
 #promo-timer{display:inline-flex;gap:6px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:.5px}
 #promo-timer span{background:rgba(0,0,0,0.25);border-radius:4px;padding:2px 6px;min-width:24px;text-align:center}
@@ -39,12 +63,12 @@ a{text-decoration:none;color:inherit}
 #promo-banner.is-ended{background:linear-gradient(90deg,#4a4a4a,#5c5c5c)}
 @keyframes promoPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.85}}
 #promo-timer.is-urgent span{animation:promoPulse 1s ease-in-out infinite}
-@media(max-width:520px){#promo-banner{font-size:11.5px;padding:8px 10px}#promo-timer span{padding:2px 5px;min-width:20px}}
+@media(max-width:520px){#promo-banner{font-size:14px;padding:8px 10px}#promo-timer span{padding:2px 5px;min-width:20px}}
 
 /* HEADER */
 #header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transition:top .2s}
-.header-logo{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;white-space:nowrap}
-.header-btn{background:var(--dorado);color:var(--negro);font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:10px 20px;white-space:nowrap;transition:background .2s}
+.header-logo{font-size:14px;font-weight:700;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;white-space:nowrap}
+.header-btn{background:var(--dorado);color:var(--negro);font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 18px;white-space:nowrap;transition:background .2s}
 .header-btn:hover{background:var(--dorado2)}
 
 /* HERO */
@@ -53,19 +77,19 @@ a{text-decoration:none;color:inherit}
 .hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.22}
 .hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,var(--negro) 0%,rgba(8,8,8,0.3) 40%,rgba(8,8,8,0.3) 60%,var(--negro) 100%)}
 .hero-inner{position:relative;z-index:1;padding:60px 24px 80px;max-width:820px;margin:0 auto;text-align:center}
-.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--dorado);margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px}
-.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:40px;height:.5px;background:var(--dorado);opacity:.5}
+.hero-eyebrow{font-size:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--dorado);margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px;white-space:nowrap}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:40px;height:.5px;background:var(--dorado);opacity:.5;flex:0 1 40px;min-width:8px}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(40px,8vw,78px);font-weight:900;line-height:1.05;color:var(--blanco);letter-spacing:-1px;margin-bottom:6px}
 .hero-h1 span{color:var(--dorado);display:block}
 .hero-sub{font-size:clamp(15px,2.5vw,18px);color:var(--blanco2);opacity:.8;max-width:540px;margin:20px auto 36px;line-height:1.65}
 .hero-identificacion{font-size:13.5px;color:var(--dorado);opacity:.9;max-width:460px;margin:-20px auto 24px;line-height:1.5;font-weight:600}
 .hero-video-wrap{position:relative;max-width:620px;margin:0 auto 32px;border:1px solid rgba(201,168,76,.25);box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 40px rgba(201,168,76,.08);overflow:hidden}
 .hero-video{display:block;width:100%;height:auto;background:#000}
-.hero-video-sound{position:absolute;top:12px;right:12px;background:rgba(8,8,8,.75);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;letter-spacing:.3px;cursor:pointer;opacity:1;transition:opacity .35s,background .2s}
+.hero-video-sound{position:absolute;top:12px;right:12px;background:rgba(8,8,8,.75);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:7px 14px;font-size:14px;font-weight:600;letter-spacing:.3px;cursor:pointer;opacity:1;transition:opacity .35s,background .2s}
 .hero-video-sound.is-hidden{opacity:0;pointer-events:none}
 .hero-video-sound:hover{background:rgba(8,8,8,.9)}
 .hero-cta-wrap{max-width:400px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px}
-.prueba-social{font-size:12px;color:var(--dorado);letter-spacing:.3px;font-weight:600;margin:0}
+.prueba-social{font-size:14px;color:var(--dorado);letter-spacing:.3px;font-weight:600;margin:0}
 .roi-txt{font-size:13px;color:var(--gris);text-align:center;margin-bottom:14px;font-style:italic}
 .hero-btn{display:block;background:var(--dorado);color:var(--negro);font-weight:800;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:20px 32px;width:100%;text-align:center;transition:background .2s,transform .15s}
 .hero-btn:hover{background:var(--dorado2);transform:translateY(-2px)}
@@ -73,7 +97,7 @@ a{text-decoration:none;color:inherit}
 .hero-price s{color:var(--gris)}
 .hero-price strong{color:var(--dorado);font-size:15px}
 .hero-badges{display:flex;justify-content:center;gap:24px;margin-top:52px;flex-wrap:wrap}
-.hero-badge{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:8px}
+.hero-badge{font-size:14px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gris);display:flex;align-items:center;gap:8px}
 .hero-badge::before{content:'';display:block;width:4px;height:4px;background:var(--dorado);opacity:.6}
 
 /* IMAGEN FULL — portada 3 */
@@ -85,8 +109,8 @@ a{text-decoration:none;color:inherit}
 .historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:900px;margin:0 auto}
 .historia-img{border:1px solid rgba(201,168,76,.2);overflow:hidden;position:relative}
 .historia-img img{width:100%;height:auto;object-fit:contain;display:block}
-.historia-img-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,8,8,.95),transparent);padding:24px 20px 14px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dorado)}
-.historia-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:20px}
+.historia-img-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,8,8,.95),transparent);padding:24px 20px 14px;font-size:14px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--dorado)}
+.historia-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:14px;font-weight:700;letter-spacing:1.4px;line-height:1.45;max-width:100%;text-transform:uppercase;padding:5px 14px;margin-bottom:20px}
 .historia-content h2{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,36px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:18px}
 .historia-content p{font-size:15px;color:var(--blanco2);line-height:1.8;margin-bottom:14px;opacity:.85}
 .cita{border-left:3px solid var(--dorado);padding:16px 20px;background:rgba(201,168,76,.05);margin:22px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:var(--blanco);line-height:1.6}
@@ -97,7 +121,7 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 /* DOLORES */
 #dolores{padding:80px 24px;background:var(--negro)}
 .section-header{text-align:center;margin-bottom:48px}
-.section-header .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
+.section-header .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:14px;font-weight:700;letter-spacing:1.4px;line-height:1.45;max-width:100%;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
 .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,40px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:10px}
 .section-header p{font-size:15px;color:var(--gris);max-width:500px;margin:0 auto}
 .dolores-list{max-width:700px;margin:0 auto}
@@ -114,7 +138,7 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 .ben-card{background:var(--negro3);border:1px solid rgba(201,168,76,.1);padding:22px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s,border-color .2s}
 .ben-card.visible{opacity:1;transform:translateY(0)}
 .ben-card:hover{border-color:rgba(201,168,76,.3)}
-.ben-check{width:26px;height:26px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--dorado);font-size:12px;margin-top:3px}
+.ben-check{width:26px;height:26px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--dorado);font-size:14px;margin-top:3px}
 .ben-txt{font-size:14px;color:var(--blanco2);line-height:1.6}
 .ben-txt strong{color:var(--dorado);font-size:15px}
 
@@ -127,45 +151,45 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 .precio-box{margin-top:16px;padding:20px;background:var(--negro3);border:1px solid rgba(201,168,76,.2);text-align:center}
 .precio-tachado{font-size:13px;color:var(--gris);text-decoration:line-through;margin-bottom:4px}
 .precio-actual{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:var(--dorado);line-height:1;font-variant-numeric:lining-nums}
-.precio-nota{font-size:11px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.precio-nota{font-size:14px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
 .bonus-box{margin-top:14px;padding:18px 20px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.35);border-radius:2px}
-.bonus-tag{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px}
+.bonus-tag{font-size:14px;font-weight:800;letter-spacing:0.6px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px}
 .bonus-titulo{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--blanco);margin-bottom:6px;line-height:1.25}
 .bonus-desc{font-size:13px;color:var(--gris);line-height:1.5;margin-bottom:10px}
 .bonus-lista{list-style:none;padding:0;margin:0 0 10px}
 .bonus-lista li{font-size:13px;color:var(--blanco);padding-left:20px;position:relative;margin-bottom:5px;line-height:1.4}
 .bonus-lista li::before{content:'✓';position:absolute;left:0;color:var(--dorado);font-weight:700}
 .bonus-lista strong{color:var(--dorado)}
-.bonus-nota{font-size:11.5px;color:var(--gris);font-style:italic;line-height:1.4;margin:0}
+.bonus-nota{font-size:14px;color:var(--gris);font-style:italic;line-height:1.4;margin:0}
 .recibis-lista{list-style:none;padding:0;margin:16px 0 4px;display:flex;flex-direction:column;gap:7px}
 .recibis-lista li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--blanco);line-height:1.4}
 .pago-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px}
-.pago-pill{font-size:11.5px;font-weight:700;letter-spacing:.3px;color:var(--gris);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:5px 12px}
-.pago-micro{font-size:12px;color:var(--gris);text-align:center;margin:10px 0 0;line-height:1.5}
-.garantia-box{margin-top:12px;padding:10px 14px;border:1px solid rgba(201,168,76,.3);border-radius:2px;font-size:12px;color:var(--blanco2);text-align:center;line-height:1.5}
+.pago-pill{font-size:14px;font-weight:700;letter-spacing:.3px;color:var(--gris);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:5px 12px}
+.pago-micro{font-size:14px;color:var(--gris);text-align:center;margin:10px 0 0;line-height:1.5}
+.garantia-box{margin-top:12px;padding:10px 14px;border:1px solid rgba(201,168,76,.3);border-radius:2px;font-size:14px;color:var(--blanco2);text-align:center;line-height:1.5}
 .garantia-box[hidden]{display:none}
 .garantia-cta{max-width:420px;margin:16px auto 0}
-.garantia-mini{font-size:12px;color:var(--gris);margin-top:8px}
-.pago-moneda{font-size:12px;color:var(--gris);text-align:center;margin:8px 0 0;line-height:1.5}
+.garantia-mini{font-size:14px;color:var(--gris);margin-top:8px}
+.pago-moneda{font-size:14px;color:var(--gris);text-align:center;margin:8px 0 0;line-height:1.5}
 .pago-moneda:empty{display:none}
-.soporte-linea{font-size:12px;color:var(--gris);text-align:center;margin:12px 0 0}
+.soporte-linea{font-size:14px;color:var(--gris);text-align:center;margin:12px 0 0}
 .soporte-linea a{color:var(--dorado);text-decoration:underline;text-underline-offset:2px}
 .btn-gold{display:block;background:var(--dorado);color:var(--negro);font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:17px 28px;text-align:center;transition:background .2s,transform .15s;margin-top:12px;width:100%}
 .btn-gold:hover{background:var(--dorado2);transform:translateY(-1px)}
-.producto-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
+.producto-content .badge{display:inline-block;border:1px solid rgba(201,168,76,.4);color:var(--dorado);font-size:14px;font-weight:700;letter-spacing:1.4px;line-height:1.45;max-width:100%;text-transform:uppercase;padding:5px 14px;margin-bottom:16px}
 .producto-content h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:var(--blanco);line-height:1.2;margin-bottom:6px}
 .producto-content .sub{font-size:14px;color:var(--gris);margin-bottom:24px}
 .modulos{display:flex;flex-direction:column}
 .mod-item{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
 .mod-num{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--dorado);opacity:.35;min-width:26px;line-height:1.3}
-.mod-titulo{font-size:13px;font-weight:600;color:var(--blanco);margin-bottom:2px}
-.mod-desc{font-size:12px;color:var(--gris);line-height:1.5}
+.mod-titulo{font-size:15px;font-weight:600;color:var(--blanco);margin-bottom:2px}
+.mod-desc{font-size:14px;color:var(--gris);line-height:1.5}
 
 /* BONUS */
 #bonus{padding:80px 24px;background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1)}
 .bonus-card{max-width:700px;margin:0 auto;border:1px solid rgba(201,168,76,.3);background:linear-gradient(135deg,rgba(201,168,76,.05) 0%,transparent 60%);padding:40px;display:flex;gap:28px;align-items:center}
 .bonus-icon{font-size:44px;flex-shrink:0}
-.bonus-badge{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px}
+.bonus-badge{font-size:14px;font-weight:700;letter-spacing:1.4px;line-height:1.45;text-transform:uppercase;color:var(--dorado);margin-bottom:8px}
 .bonus-titulo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--blanco);margin-bottom:10px;line-height:1.3}
 .bonus-desc{font-size:14px;color:var(--blanco2);line-height:1.65;opacity:.85;margin-bottom:10px}
 .bonus-valor{font-size:13px;color:var(--gris)}
@@ -180,8 +204,8 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 .test-txt{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--blanco2);line-height:1.7;margin-bottom:18px}
 .test-autor{display:flex;align-items:center;gap:10px}
 .autor-av{width:38px;height:38px;border-radius:50%;background:var(--negro4);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--dorado);font-weight:700;flex-shrink:0}
-.autor-nombre{font-size:13px;font-weight:600;color:var(--blanco)}
-.autor-ciudad{font-size:11px;color:var(--gris)}
+.autor-nombre{font-size:15px;font-weight:600;color:var(--blanco)}
+.autor-ciudad{font-size:14px;color:var(--gris)}
 
 /* FAQ */
 #faq{padding:80px 24px;background:var(--negro2);border-top:1px solid rgba(201,168,76,.1)}
@@ -203,8 +227,8 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 .cta-hr{width:60px;height:.5px;background:var(--dorado);margin:22px auto;opacity:.6}
 .cta-sub{font-size:16px;color:var(--blanco2);opacity:.75;max-width:440px;margin:0 auto 28px;line-height:1.65}
 .cta-precio{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;color:var(--dorado);line-height:1;margin-bottom:6px;font-variant-numeric:lining-nums}
-.cta-precio-nota{font-size:12px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
-.cta-bonus-linea{font-size:12.5px;color:var(--dorado);font-weight:600;margin:-14px 0 20px;letter-spacing:.2px}
+.cta-precio-nota{font-size:14px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
+.cta-bonus-linea{font-size:14px;color:var(--dorado);font-weight:600;margin:-14px 0 20px;letter-spacing:.2px}
 .cta-autoridad{font-size:13px;color:var(--blanco2);opacity:.75;max-width:440px;margin:-6px auto 28px;line-height:1.6;font-style:italic}
 .cta-btn{display:block;background:var(--dorado);color:var(--negro);font-weight:800;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:22px 32px;max-width:420px;margin:0 auto;text-align:center;transition:background .2s,transform .15s}
 .cta-btn:hover{background:var(--dorado2);transform:translateY(-2px)}
@@ -212,16 +236,17 @@ hr.gold{border:none;height:.5px;background:rgba(201,168,76,.2);margin:0}
 
 /* FOOTER */
 footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding:30px 24px;text-align:center}
-.footer-logo{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;margin-bottom:8px}
-.footer-copy{font-size:12px;color:var(--gris);line-height:1.6}
+.footer-logo{font-size:14px;font-weight:700;letter-spacing:2px;color:var(--dorado);text-transform:uppercase;margin-bottom:8px}
+.footer-copy{font-size:14px;color:var(--gris);line-height:1.6}
 
 /* STICKY MOBILE */
 #sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(8,8,8,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(201,168,76,.2);padding:12px 20px}
+@media(max-width:360px){#sticky{padding:10px 12px}.sticky-inner{gap:8px}.sticky-btn{letter-spacing:0;padding:12px 8px}}
 .sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;max-width:500px;margin:0 auto}
 .sticky-precio{display:flex;flex-direction:column}
-.sticky-tachado{font-size:11px;color:var(--gris);text-decoration:line-through}
+.sticky-tachado{font-size:14px;color:var(--gris);text-decoration:line-through}
 .sticky-actual{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--dorado);line-height:1;font-variant-numeric:lining-nums}
-.sticky-btn{flex:1;background:var(--dorado);color:var(--negro);font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:14px 16px;text-align:center;transition:background .2s}
+.sticky-btn{flex:1;background:var(--dorado);color:var(--negro);font-weight:800;font-size:14px;letter-spacing:.4px;text-transform:uppercase;padding:14px 12px;text-align:center;transition:background .2s}
 .sticky-btn:hover{background:var(--dorado2)}
 
 /* RESPONSIVE */
@@ -236,9 +261,12 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
   .test-grid{grid-template-columns:1fr}
   .bonus-card{flex-direction:column;gap:18px;padding:28px 22px}
   #sticky{display:block}
-  body{padding-bottom:76px}
+  body{padding-bottom:88px}
   .header-btn{display:none}
   #img-full img{height:auto}
+}
+@media(max-width:360px){
+  body{padding-bottom:116px}
 }
 @media(prefers-reduced-motion:reduce){
   .dolor-item,.ben-card,.test-card{opacity:1!important;transform:none!important}
@@ -247,9 +275,9 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 </head>
 <body>
 
-<!-- BANNER (motor de campañas: normal por defecto, cambia solo si hay una campaña activa) -->
-<div id="promo-banner">
-  <div class="promo-row1" id="promo-row1">Precio actual: <strong>$47 USD</strong></div>
+<!-- BANNER oculto. Solo se muestra si PROMO.activa es true (config al final del script). -->
+<div id="promo-banner" hidden>
+  <div class="promo-row1" id="promo-row1"></div>
   <div class="promo-row2" id="promo-row2">
     <span id="promo-timer">
       <span id="promo-d">00</span><span class="promo-sep">d</span>
@@ -257,7 +285,6 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <span id="promo-m">00</span><span class="promo-sep">m</span>
       <span id="promo-s">00</span><span class="promo-sep">s</span>
     </span>
-    <span>· sube a $67 el 21/9</span>
   </div>
 </div>
 
@@ -265,14 +292,17 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <header id="header">
   <div class="header-logo">✈ viajealinfinit8</div>
   <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="header-btn">
-    Conseguir el Manual — <span id="precio-header-actual">$27 USD</span>
+    Conseguir el Manual — <span id="precio-header-actual">$47 USD</span>
   </a>
 </header>
 
 <!-- HERO — usa portada5 de fondo -->
 <section id="hero">
   <div class="hero-bg-img">
-    <img src="./portada5.png" alt="El Viajero Premium">
+    <picture>
+      <source srcset="./portada5.webp" type="image/webp">
+      <img src="./portada5.png" alt="El Viajero Premium" width="1536" height="1024" loading="lazy" decoding="async">
+    </picture>
   </div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Manual Confidencial ✈</div>
@@ -289,6 +319,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
         id="hero-video"
         class="hero-video"
         poster="./hero-video-poster.jpg"
+        width="1280"
+        height="720"
         autoplay
         muted
         playsinline
@@ -299,11 +331,11 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <button id="hero-video-sound" class="hero-video-sound" aria-label="Activar sonido">🔇 Activar sonido</button>
     </div>
     <div class="hero-cta-wrap">
-      <p class="prueba-social">⭐ +200 viajeros ya usaron estos hacks para volar distinto</p>
+      <p class="prueba-social" data-prueba-social hidden>⭐ +200 viajeros ya usaron estos hacks para volar distinto</p>
       <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="hero-btn">
         Quiero El Viajero Premium
       </a>
-      <p class="hero-price"><s id="precio-hero-tachado">$67 USD</s> &nbsp;→&nbsp; <strong id="precio-hero-actual">$27 USD</strong> &nbsp;·&nbsp; <span id="hero-nota">Precio especial hasta el 1° de noviembre, después sube a $67</span></p>
+      <p class="hero-price"><s id="precio-hero-tachado" hidden></s><span id="precio-hero-flecha" hidden>&nbsp;→&nbsp;</span><strong id="precio-hero-actual">$47 USD</strong><span id="hero-nota" hidden></span></p>
       <p class="garantia-mini">🛡️ Garantía de 7 días, sin preguntas</p>
     </div>
     <div class="hero-badges">
@@ -316,21 +348,27 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 
 <!-- IMAGEN FULL — portada3 -->
 <div id="img-full">
-  <img src="./portada3.png" alt="El sistema existe. La mayoría no lo usa.">
+  <picture>
+    <source srcset="./portada3.webp" type="image/webp">
+    <img src="./portada3.png" alt="El sistema existe. La mayoría no lo usa." width="1536" height="1024" loading="lazy" decoding="async">
+  </picture>
 </div>
 
 <!-- HISTORIA -->
 <section id="historia">
   <div class="historia-grid">
     <div class="historia-img">
-      <img src="./portada5.png" alt="El Viajero Premium">
+      <picture>
+        <source srcset="./portada5.webp" type="image/webp">
+        <img src="./portada5.png" alt="El Viajero Premium" width="1536" height="1024" loading="lazy" decoding="async">
+      </picture>
       <div class="historia-img-label">✈ La experiencia que lo cambió todo</div>
     </div>
     <div class="historia-content">
       <div class="badge">La historia detrás del manual</div>
       <h2>¿Cómo es posible volar en Business pagando Economy?</h2>
       <p>Volví de Barcelona a Buenos Aires con escala en Brasil. Busqué el vuelo de vuelta durante varios días, siempre en modo incógnito, a distintos horarios. Un día apareció una tarifa que no había visto antes.</p>
-      <p><strong style="color:var(--blanco)">€150 en Premium Economy</strong> — cuando el precio normal era $300. Incluía despacho prioritario en mostrador exclusivo, sala VIP y priority boarding.</p>
+      <p><strong style="color:var(--blanco)">€150 en Premium Economy</strong> — cuando el precio normal era €300. Incluía despacho prioritario en mostrador exclusivo, sala VIP y priority boarding.</p>
       <div class="cita">"No fue suerte. Fue método. Saber cuándo buscar, cómo buscar y qué mirar cuando aparece una tarifa así."</div>
       <p>Junté todo ese sistema en un manual. Ocho módulos, veinte hacks, información real que las aerolíneas prefieren que no conozcas.</p>
     </div>
@@ -349,7 +387,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
   <div class="dolores-list">
     <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Llegás al aeropuerto y ves la puerta de la <strong>sala VIP</strong> — y seguís de largo porque creés que no podés entrar</div></div>
     <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Te sentás en Economy en un vuelo de 12 horas mientras otros pasan a <strong>Business Class</strong> y no entendés cómo llegaron ahí</div></div>
-    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Tu vuelo se retrasó 4 horas — y nunca supiste que tenías derecho a hasta <strong>$1.200 USD de compensación</strong></div></div>
+    <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Tu vuelo se retrasó 4 horas — y nunca supiste que tenías derecho a hasta <strong>€600 de compensación</strong></div></div>
     <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Acumulás puntos y millas hace años pero nunca los canjeás porque no sabés <strong>cómo ni cuándo</strong></div></div>
     <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Esperás 40 minutos en la cinta de equipaje mientras otros <strong>ya salieron del aeropuerto</strong></div></div>
     <div class="dolor-item"><div class="dolor-x">✕</div><div class="dolor-txt">Pagás tu tarjeta todos los meses sin saber que <strong>ya incluye acceso a salas VIP</strong></div></div>
@@ -366,7 +404,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <h2>Vas a poder hacer todo esto</h2>
   </div>
   <div class="beneficios-grid">
-    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Entrar a salas VIP en más de 1.600 aeropuertos desde <strong>$23 USD</strong> sin tarjeta black</div></div>
+    <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Entrar a salas VIP en más de 1.300 aeropuertos desde <strong>$23 USD</strong> sin tarjeta black</div></div>
     <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Volar en Business Class usando los <strong>4 métodos reales</strong> que casi nadie en Latam conoce</div></div>
     <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Reclamar hasta <strong>€600 por pasajero</strong> cuando tu vuelo europeo se retrasa</div></div>
     <div class="ben-card"><div class="ben-check">✓</div><div class="ben-txt">Saber qué decir y cuándo para conseguir un <strong>upgrade en el aeropuerto</strong></div></div>
@@ -378,7 +416,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <hr class="gold">
 
 <!-- TESTIMONIOS -->
-<section id="testimonios">
+<section id="testimonios" data-prueba-social hidden>
   <div class="section-header">
     <div class="badge">Resultados reales</div>
     <h2>Lo que dicen los que ya lo tienen</h2>
@@ -420,21 +458,24 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <div class="producto-img-wrap">
       <!-- ✏️ EDITAR: reemplazar con mockup real del ebook si tenés uno -->
       <div class="producto-mockup">
-        <img src="./portada2.png" alt="El Viajero Premium — Manual">
+        <picture>
+          <source srcset="./portada2.webp" type="image/webp">
+          <img src="./portada2.png" alt="El Viajero Premium — Manual" width="1536" height="1024" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="roi-txt">Con el primer hack que aplicás, ya recuperás la inversión.</div>
       <div class="precio-box">
-        <div class="precio-tachado" id="precio-prod-tachado">Valor real de este sistema: $67 USD</div>
-        <div class="precio-actual" id="precio-prod-actual">$27 USD</div>
+        <div class="precio-tachado" id="precio-prod-tachado" hidden></div>
+        <div class="precio-actual" id="precio-prod-actual">$47 USD</div>
         <div class="precio-nota">Precio actual</div>
-        <div class="precio-urgencia" id="precio-urgencia-txt">Sube a $67 el <span class="promo-fecha">1° de noviembre</span></div>
+        <div class="precio-urgencia" id="precio-urgencia-txt" hidden></div>
       </div>
       <div class="bonus-box">
         <div class="bonus-tag">🎁 Bonus incluido, por tiempo limitado</div>
         <div class="bonus-titulo">Acceso anticipado a la app Hack Finder</div>
         <p class="bonus-desc">Vale $97 USD y hoy te la llevás gratis.</p>
         <ul class="bonus-lista">
-          <li>+58 aeropuertos, toda la info en tu celular</li>
+          <li>63 aeropuertos, toda la info en tu celular</li>
           <li>Guardá y consultá tus rutas cuando quieras</li>
           <li>Cuando termine la beta se vende por separado. Quien compra ahora la conserva gratis para siempre.</li>
         </ul>
@@ -459,7 +500,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="modulos">
         <div class="mod-item"><div class="mod-num">01</div><div><div class="mod-titulo">Salas VIP Sin Tarjeta Black</div><div class="mod-desc">Regus + DragonPass (~$23), LoungeBuddy y acceso gratis en retrasos</div></div></div>
         <div class="mod-item"><div class="mod-num">02</div><div><div class="mod-titulo">Business Class Sin Pagarlo</div><div class="mod-desc">Subasta Plusgrade, código de tarifa Y/B, overbooking y gate a 45 minutos</div></div></div>
-        <div class="mod-item"><div class="mod-num">03</div><div><div class="mod-titulo">El Sistema de Millas</div><div class="mod-desc">LATAM Pass 2025 sin vuelos mínimos, Avianca LifeMiles con 100% bonificación</div></div></div>
+        <div class="mod-item"><div class="mod-num">03</div><div><div class="mod-titulo">El Sistema de Millas</div><div class="mod-desc">LATAM Pass sin vuelos mínimos, Avianca LifeMiles con 100% bonificación</div></div></div>
         <div class="mod-item"><div class="mod-num">04</div><div><div class="mod-titulo">El Check-in Estratégico</div><div class="mod-desc">SeatGuru, comida especial gratis, upgrade durante check-in online</div></div></div>
         <div class="mod-item"><div class="mod-num">05</div><div><div class="mod-titulo">Upgrades en el Aeropuerto</div><div class="mod-desc">La lista de prioridades real y las palabras exactas que funcionan</div></div></div>
         <div class="mod-item"><div class="mod-num">06</div><div><div class="mod-titulo">Derechos del Pasajero</div><div class="mod-desc">EC 261/2004 — hasta €600 por pasajero. AirHelp sin costo inicial</div></div></div>
@@ -506,8 +547,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
       <div class="faq-a"><div class="faq-a-inner">Podés encontrar fragmentos sueltos. Lo que no encontrás es el sistema completo, verificado, con los nombres exactos de las apps, los montos reales de compensación y las palabras exactas para cada situación — todo en un solo lugar listo para aplicar desde el próximo vuelo.</div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><div class="faq-q-txt">¿Vale <span id="precio-faq-actual">$27</span> si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
-      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Eso es <span id="faq-multiplo">22</span> veces lo que invertiste con una sola aplicación. El resto del manual es ganancia adicional en comodidad y experiencia.</div></div>
+      <div class="faq-q"><div class="faq-q-txt">¿Vale <span id="precio-faq-actual">$47</span> si solo viajo una o dos veces al año?</div><div class="faq-icon">+</div></div>
+      <div class="faq-a"><div class="faq-a-inner">El Módulo 6 solo puede devolverte hasta €600 si tu próximo vuelo europeo se retrasa. Con una sola aplicación, esa compensación supera el precio del manual. El resto es ganancia adicional en comodidad y experiencia.</div></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><div class="faq-q-txt">Ya sé viajar, ¿para qué necesito esto?</div><div class="faq-icon">+</div></div>
@@ -542,7 +583,7 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
     <h2>Empezá a viajar <span>diferente.</span></h2>
     <div class="cta-hr"></div>
     <p class="cta-sub">Una sola aplicación de lo que aprendés en este manual y ya recuperaste la inversión.</p>
-    <div class="cta-precio" id="precio-cta-actual">$27 USD</div>
+    <div class="cta-precio" id="precio-cta-actual">$47 USD</div>
     <div class="cta-precio-nota">8 módulos · 20 hacks · Precio actual</div>
     <p class="cta-bonus-linea">🎁 Incluye acceso anticipado a la app Hack Finder, gratis solo por ahora</p>
     <p class="cta-autoridad">Más de 10 años aplicando lo que aprendí sobre viajes para desbloquear beneficios que la mayoría ni sabe que existen. Un sistema comprobado que me ayudó a conseguir viajes de mayor calidad y comodidad, sin pagar precios de lujo.</p>
@@ -564,8 +605,8 @@ footer{background:var(--negro2);border-top:1px solid rgba(201,168,76,.1);padding
 <div id="sticky">
   <div class="sticky-inner">
     <div class="sticky-precio">
-      <div class="sticky-tachado" id="precio-sticky-tachado">$67 USD</div>
-      <div class="sticky-actual" id="precio-sticky-actual">$27 USD</div>
+      <div class="sticky-tachado" id="precio-sticky-tachado" hidden></div>
+      <div class="sticky-actual" id="precio-sticky-actual">$47 USD</div>
     </div>
     <a href="https://viajealinfinit8.tiendup.com/p/el-viajero-premium" class="sticky-btn">Conseguir el Manual</a>
   </div>
@@ -600,62 +641,41 @@ const obs=new IntersectionObserver((entries)=>{
 document.querySelectorAll('.dolor-item,.ben-card,.test-card').forEach(el=>obs.observe(el));
 
 // ============================================================
-// MOTOR DE CAMPAÑAS DE PRECIO
+// PRECIO — una sola config
 // ------------------------------------------------------------
-// Estado NORMAL (sin campaña activa): precio $47, banner con
-// countdown a la suba real del 21/9 → $67.
+// Precio fijo de toda la landing. Cambiar PRECIO_FIJO actualiza
+// header, hero, producto, FAQ, CTA, sticky y el valor del pixel.
 //
-// Para activar una campaña puntual (Travel Sale, Black Friday,
-// Cyber Monday, etc.), agregá un objeto al array CAMPAIGNS de
-// abajo. Mientras la fecha de hoy caiga dentro de [inicio, fin),
-// el banner y TODOS los precios de la landing cambian solos al
-// precio de esa campaña. Al terminar, vuelven solos al precio
-// normal ($47) — no hace falta tocar nada a mano.
+// Para reactivar una promo con fecha REAL, editá solo PROMO:
+//   activa: true
+//   precio: '$XX USD'                 // precio de la promo
+//   ancla:  '$47 USD'                 // tachado; vacío = sin tachado
+//   fin:    '2026-11-30T23:59:59-03:00'
+//   textoBanner: 'Nombre de la promo y hasta qué fecha vale'
+// Mientras ahora < fin, se muestran banner, countdown y ancla.
+// Al pasar fin (o con activa:false) vuelve a PRECIO_FIJO:
+// sin countdown, sin tachado y sin texto de "sube a".
 //
-// Ejemplo para sumar una campaña (descomentar y completar):
+// PESOS_TIENDUP: monto que cobra Tiendup, no una conversión.
+// Dejar {} hasta que Rodrigo publique el precio en pesos.
+// Ejemplo de forma, sin monto inventado: {'$47 USD': '<monto de Tiendup>'}
 //
-// {
-//   nombre: 'Black Friday',
-//   inicio: '2026-11-27T00:00:00-03:00',
-//   fin:    '2026-11-30T23:59:59-03:00',
-//   precio: '$27 USD',
-//   hook:   'Aprovechá tu experiencia VIP sin pagar precios de lujo'
-// }
-//
-// Si hay dos campañas con fechas superpuestas, gana la primera
-// del array. El precio normal ($47) y la fecha de la próxima
-// suba real ($67 el 21/9) están fijos más abajo, no dependen
-// de este array.
+// MOSTRAR_PRUEBA_SOCIAL: +200 viajeros y los 3 testimonios.
+// Dejar en false hasta confirmar que son reales.
 // ============================================================
+var PRECIO_FIJO = '$47 USD';
 
-var CAMPAIGNS = [
-  {
-    nombre: 'Relanzamiento $27',
-    inicio: '2026-09-20T00:00:00-03:00',
-    fin: '2026-10-01T00:00:00-03:00',
-    precio: '$27 USD',
-    textoBanner: '⏰ Vuelve a $27 USD — Solo hasta el 1° de octubre. Después sube a $67.'
-  },
-  {
-    nombre: 'Octubre $27',
-    inicio: '2026-10-01T20:00:00-03:00',
-    fin: '2026-11-01T00:00:00-03:00',
-    precio: '$27 USD',
-    textoBanner: '⏰ $27 USD — Solo durante octubre. Después sube a $67.'
-  },
-  {
-    nombre: 'Mes Cyber $27',
-    inicio: '2026-11-03T00:00:00-03:00',
-    fin: '2026-12-01T00:00:00-03:00',
-    precio: '$27 USD',
-    textoBanner: '🔥 MES CYBER: $27 USD, solo durante noviembre. Después sube a $67.'
-  }
-  // Agregar acá las próximas campañas (Black Friday, Cyber Monday, etc.)
-];
+var PROMO = {
+  activa: false,
+  precio: '',
+  ancla: '',
+  fin: '',
+  textoBanner: ''
+};
 
-var PRECIO_NORMAL = '$47 USD';
-var PRECIO_ANCLA_NORMAL = '$67 USD';
-var FECHA_SUBA_NORMAL = new Date('2026-09-21T00:00:00-03:00').getTime();
+var PESOS_TIENDUP = {};
+
+var MOSTRAR_PRUEBA_SOCIAL = false;
 
 var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 
@@ -665,172 +685,162 @@ function fechaBonita(ts){
   return (dia === 1 ? '1°' : dia) + ' de ' + MESES[f.getMonth()];
 }
 
+function precioNumero(txt){
+  var n = parseInt(String(txt).replace(/[^0-9]/g,''), 10);
+  return isNaN(n) ? 0 : n;
+}
+
+function promoVigente(){
+  if(!PROMO || !PROMO.activa || !PROMO.precio || !PROMO.fin) return null;
+  var fin = new Date(PROMO.fin).getTime();
+  if(isNaN(fin) || Date.now() >= fin) return null;
+  return PROMO;
+}
+
+function precioVigenteTexto(){
+  var promo = promoVigente();
+  return promo ? promo.precio : PRECIO_FIJO;
+}
+
 (function(){
+  if(MOSTRAR_PRUEBA_SOCIAL){
+    document.querySelectorAll('[data-prueba-social]').forEach(function(el){
+      el.hidden = false;
+    });
+  }
+
   var banner = document.getElementById('promo-banner');
   var header = document.getElementById('header');
   var hero = document.getElementById('hero');
-  var row1 = document.getElementById('promo-row1');
-  var row2 = document.getElementById('promo-row2');
-  var timer = document.getElementById('promo-timer');
 
-  function idsDePrecio(){
-    return ['precio-hero-actual','precio-prod-actual','precio-cta-actual','precio-sticky-actual','precio-header-actual'];
+  function setTexto(id, valor){
+    var el = document.getElementById(id);
+    if(el) el.textContent = valor;
   }
 
-  function setPrecioEnLaPagina(valorConUSD, valorSinUSD){
-    idsDePrecio().forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.textContent = valorConUSD;
+  function setPrecio(valorConUSD){
+    ['precio-hero-actual','precio-prod-actual','precio-cta-actual','precio-sticky-actual','precio-header-actual'].forEach(function(id){
+      setTexto(id, valorConUSD);
     });
     var faq = document.getElementById('precio-faq-actual');
-    if(faq) faq.textContent = valorSinUSD;
-    var mult = document.getElementById('faq-multiplo');
-    var num = parseInt(String(valorSinUSD).replace(/[^0-9]/g,''),10);
-    if(mult && num) mult.textContent = Math.round(600 / num);
+    if(faq) faq.textContent = '$' + precioNumero(valorConUSD);
   }
 
-  function setAnclaEnLaPagina(valorConUSD){
-    ['precio-hero-tachado','precio-sticky-tachado'].forEach(function(id){
-      var el = document.getElementById(id);
-      if(el) el.textContent = valorConUSD;
-    });
-    var prod = document.getElementById('precio-prod-tachado');
-    if(prod) prod.textContent = 'Valor real de este sistema: ' + valorConUSD;
+  function setAncla(valorConUSD){
+    setTexto('precio-hero-tachado', valorConUSD);
+    setTexto('precio-sticky-tachado', valorConUSD);
+    setTexto('precio-prod-tachado', 'Valor de lista: ' + valorConUSD);
   }
 
-  // Precio que corresponde apenas termine una campaña: si su fecha de cierre
-  // es posterior a la suba real del 21/9, el precio "de vuelta" ya es $67,
-  // no $47 (evita mostrar un precio intermedio que nunca vas a cobrar).
-  function precioDespuesDe(finTs){
-    return finTs > FECHA_SUBA_NORMAL ? PRECIO_ANCLA_NORMAL : PRECIO_NORMAL;
-  }
-
-  function campañaActiva(){
-    var ahora = new Date().getTime();
-    for(var i = 0; i < CAMPAIGNS.length; i++){
-      var c = CAMPAIGNS[i];
-      var inicio = new Date(c.inicio).getTime();
-      var fin = new Date(c.fin).getTime();
-      if(ahora >= inicio && ahora < fin){
-        return c;
-      }
-    }
-    return null;
+  function mostrar(id, on){
+    var el = document.getElementById(id);
+    if(el) el.hidden = !on;
   }
 
   function ajustarOffsets(){
-    if(!banner) return;
-    var h = banner.style.display === 'none' ? 0 : banner.offsetHeight;
+    if(!banner || !header || !hero) return;
+    if(banner.hidden){
+      header.style.top = '';
+      hero.style.paddingTop = '';
+      return;
+    }
+    var h = banner.offsetHeight;
     header.style.top = h + 'px';
     hero.style.paddingTop = (h + 80) + 'px';
   }
 
   function pintarTimer(restante){
-    if(restante <= 86400000){
-      timer.classList.add('is-urgent');
-    } else {
-      timer.classList.remove('is-urgent');
-    }
+    var timer = document.getElementById('promo-timer');
+    if(!timer) return;
+    if(restante <= 86400000) timer.classList.add('is-urgent');
+    else timer.classList.remove('is-urgent');
     var d = Math.floor(restante / 86400000);
     var h = Math.floor((restante % 86400000) / 3600000);
     var m = Math.floor((restante % 3600000) / 60000);
     var s = Math.floor((restante % 60000) / 1000);
-    document.getElementById('promo-d').textContent = String(d).padStart(2,'0');
-    document.getElementById('promo-h').textContent = String(h).padStart(2,'0');
-    document.getElementById('promo-m').textContent = String(m).padStart(2,'0');
-    document.getElementById('promo-s').textContent = String(s).padStart(2,'0');
+    setTexto('promo-d', String(Math.max(0,d)).padStart(2,'0'));
+    setTexto('promo-h', String(Math.max(0,h)).padStart(2,'0'));
+    setTexto('promo-m', String(Math.max(0,m)).padStart(2,'0'));
+    setTexto('promo-s', String(Math.max(0,s)).padStart(2,'0'));
+  }
+
+  function aplicarPesos(precioTxt){
+    var monedaEl = document.getElementById('pago-moneda');
+    if(!monedaEl) return;
+    var pesos = PESOS_TIENDUP && PESOS_TIENDUP[precioTxt];
+    monedaEl.textContent = pesos ? ('También en pesos, al precio de Tiendup: ' + pesos + '.') : '';
   }
 
   function tick(){
-    var ahora = new Date().getTime();
-    var campaña = campañaActiva();
-    banner.style.display = '';
-    banner.classList.remove('is-ended');
-
-    // Línea de monedas bajo el botón: el monto en pesos es fijo y solo existe para el precio de octubre ($27 USD).
-    var monedaEl = document.getElementById('pago-moneda');
-    if(monedaEl){
-      var precioVigente = campaña ? campaña.precio : (FECHA_SUBA_NORMAL - ahora <= 0 ? PRECIO_ANCLA_NORMAL : PRECIO_NORMAL);
-      var PESOS_FIJOS = {'$27 USD':'$37.000'};
-      var pesos = PESOS_FIJOS[precioVigente];
-      monedaEl.textContent = 'Podés pagar en pesos argentinos con Mercado Pago (tarjeta de crédito, débito o transferencia) o en dólares con PayPal. El precio es USD ' +
-        precioVigente.replace(/[^0-9]/g,'') + (pesos ? ', o ' + pesos + ' en pesos.' : '.');
-    }
-
-    if(campaña){
-      // Estado CAMPAÑA: precio especial + banner + countdown al cierre de la campaña
-      var fin = new Date(campaña.fin).getTime();
-      var restante = fin - ahora;
-      var precioPost = precioDespuesDe(fin);
-      var precioPostNum = precioPost.replace(' USD','');
-
-      setPrecioEnLaPagina(campaña.precio, campaña.precio.replace(' USD',''));
-      setAnclaEnLaPagina(precioPost);
-
-      var heroNota = document.getElementById('hero-nota');
-      if(heroNota) heroNota.textContent = 'Precio especial hasta el ' + fechaBonita(fin) + ' — después sube a ' + precioPostNum;
-
-      var urgenciaCamp = document.getElementById('precio-urgencia-txt');
-      if(urgenciaCamp) urgenciaCamp.innerHTML = 'Sube a ' + precioPostNum + ' el <span class="promo-fecha">' + fechaBonita(fin) + '</span>';
-
-      if(campaña.textoBanner){
-        row1.innerHTML = campaña.textoBanner;
-      } else {
-        row1.innerHTML = '<span class="promo-fecha">' + campaña.nombre + '</span> 🔥 ' + campaña.hook + ' 🔥';
-      }
-      row2.innerHTML = '<strong>' + campaña.precio + '</strong> · <span id="promo-timer">' +
-        '<span id="promo-d">00</span><span class="promo-sep">d</span>' +
-        '<span id="promo-h">00</span><span class="promo-sep">h</span>' +
-        '<span id="promo-m">00</span><span class="promo-sep">m</span>' +
-        '<span id="promo-s">00</span><span class="promo-sep">s</span></span>';
-
-      timer = document.getElementById('promo-timer');
-      pintarTimer(restante);
+    var promo = promoVigente();
+    if(!promo){
+      setPrecio(PRECIO_FIJO);
+      ['precio-hero-tachado','precio-hero-flecha','hero-nota','precio-prod-tachado','precio-urgencia-txt','precio-sticky-tachado'].forEach(function(id){
+        mostrar(id, false);
+      });
+      if(banner) banner.hidden = true;
+      aplicarPesos(PRECIO_FIJO);
       ajustarOffsets();
       return;
     }
 
-    // Estado NORMAL: precio $47, countdown a la suba real del 21/9
-    setPrecioEnLaPagina(PRECIO_NORMAL, PRECIO_NORMAL.replace(' USD',''));
-    setAnclaEnLaPagina(PRECIO_ANCLA_NORMAL);
+    setPrecio(promo.precio);
+    var conAncla = !!promo.ancla;
+    if(conAncla) setAncla(promo.ancla);
+    mostrar('precio-hero-tachado', conAncla);
+    mostrar('precio-hero-flecha', conAncla);
+    mostrar('precio-prod-tachado', conAncla);
+    mostrar('precio-sticky-tachado', conAncla);
+    mostrar('hero-nota', true);
+    mostrar('precio-urgencia-txt', true);
+    if(banner) banner.hidden = false;
 
-    var restanteSuba = FECHA_SUBA_NORMAL - ahora;
-    var urgenciaNormal = document.getElementById('precio-urgencia-txt');
-    var heroNotaNormal = document.getElementById('hero-nota');
-
-    if(restanteSuba <= 0){
-      // Ya pasó el 21/9: el precio normal ahora es $67 (sin ancla, sin countdown)
-      setPrecioEnLaPagina(PRECIO_ANCLA_NORMAL, PRECIO_ANCLA_NORMAL.replace(' USD',''));
-      row1.innerHTML = 'Precio actual: <strong>$67 USD</strong>';
-      row2.style.display = 'none';
-      if(urgenciaNormal) urgenciaNormal.style.display = 'none';
-      if(heroNotaNormal) heroNotaNormal.textContent = 'Precio actual';
-      ajustarOffsets();
-      return;
+    var fin = new Date(promo.fin).getTime();
+    var cuando = fechaBonita(fin);
+    var row1 = document.getElementById('promo-row1');
+    if(row1){
+      row1.innerHTML = promo.textoBanner || ('Precio especial: <strong>' + promo.precio + '</strong>');
     }
-
-    if(urgenciaNormal){
-      urgenciaNormal.style.display = '';
-      urgenciaNormal.innerHTML = 'Sube a $67 · <span class="promo-fecha">21 de septiembre</span>';
-    }
-    if(heroNotaNormal) heroNotaNormal.textContent = 'Precio actual';
-    row1.innerHTML = 'Precio actual: <strong>$47 USD</strong>';
-    row2.style.display = 'flex';
-    row2.innerHTML = '<span id="promo-timer">' +
-      '<span id="promo-d">00</span><span class="promo-sep">d</span>' +
-      '<span id="promo-h">00</span><span class="promo-sep">h</span>' +
-      '<span id="promo-m">00</span><span class="promo-sep">m</span>' +
-      '<span id="promo-s">00</span><span class="promo-sep">s</span></span>' +
-      '<span>· sube a $67 el 21/9</span>';
-    timer = document.getElementById('promo-timer');
-    pintarTimer(restanteSuba);
+    setTexto('hero-nota', '\u00A0·\u00A0 hasta el ' + cuando);
+    var urg = document.getElementById('precio-urgencia-txt');
+    if(urg) urg.innerHTML = 'Precio especial hasta el <span class="promo-fecha">' + cuando + '</span>';
+    pintarTimer(fin - Date.now());
+    aplicarPesos(promo.precio);
     ajustarOffsets();
   }
 
   tick();
-  ajustarOffsets();
-  setInterval(tick, 1000);
+  if(promoVigente()){
+    var iv = setInterval(function(){
+      tick();
+      if(!promoVigente()) clearInterval(iv);
+    }, 1000);
+  }
   window.addEventListener('resize', ajustarOffsets);
+})();
+
+// Meta Pixel: ViewContent al cargar e InitiateCheckout en cada botón de Tiendup.
+(function(){
+  if(typeof fbq !== 'function') return;
+  var detalle = {
+    content_name: 'El Viajero Premium',
+    content_type: 'product',
+    content_ids: ['el-viajero-premium'],
+    value: precioNumero(precioVigenteTexto()),
+    currency: 'USD'
+  };
+  fbq('track', 'ViewContent', detalle);
+  document.querySelectorAll('a[href*="tiendup.com"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      fbq('track', 'InitiateCheckout', {
+        content_name: 'El Viajero Premium',
+        content_type: 'product',
+        content_ids: ['el-viajero-premium'],
+        value: precioNumero(precioVigenteTexto()),
+        currency: 'USD'
+      });
+    });
+  });
 })();
 
 // Video del hero: arranca muteado (requisito de los navegadores), botón para activar sonido.
